@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Selenium;
 using Caelum.SeleniumDSL;
+using Caelum.SeleniumDSL.Search;
 
 namespace Caelum.SeleniumDSL.Table
 {
@@ -17,19 +18,17 @@ namespace Caelum.SeleniumDSL.Table
             this.id = Id;
         }
 
-        #region ITable Members
-
         public new string GetType()
         {
             throw new NotImplementedException();
         }
 
-        public Caelum.SeleniumDSL.Table.IColumn Column(int ColumnIndex)
+        public IColumn Column(int ColumnIndex)
         {
             throw new NotImplementedException();
         }
 
-        public Caelum.SeleniumDSL.Table.IColumn Column(string ColumnName)
+        public IColumn Column(string ColumnName)
         {
             throw new NotImplementedException();
         }
@@ -49,22 +48,22 @@ namespace Caelum.SeleniumDSL.Table
             throw new NotImplementedException();
         }
 
-        public Caelum.SeleniumDSL.Table.IRow Header()
+        public IRow Header()
         {
             throw new NotImplementedException();
         }
 
-        public Caelum.SeleniumDSL.Table.IRow Row(int Row)
+        public IRow Row(int Row)
         {
             throw new NotImplementedException();
         }
 
-        public Caelum.SeleniumDSL.Table.ICell Cell(int Row, int Col)
+        public ICell Cell(int Row, int Col)
         {
             throw new NotImplementedException();
         }
 
-        public Caelum.SeleniumDSL.Table.ICell Cell(int Row, string Col)
+        public ICell Cell(int Row, string Col)
         {
             throw new NotImplementedException();
         }
@@ -79,7 +78,7 @@ namespace Caelum.SeleniumDSL.Table
             throw new NotImplementedException();
         }
 
-        public void Iterate(Caelum.SeleniumDSL.Search.IRowVisitor Visitor)
+        public void Iterate(IRowVisitor Visitor)
         {
             throw new NotImplementedException();
         }
@@ -89,11 +88,10 @@ namespace Caelum.SeleniumDSL.Table
             throw new NotImplementedException();
         }
 
-        public Caelum.SeleniumDSL.Search.IRowMatcher Select(Caelum.SeleniumDSL.Search.IRowMatcher Matcher)
+        public IRowMatcher Select(IRowMatcher Matcher)
         {
             throw new NotImplementedException();
         }
 
-        #endregion
     }
 }

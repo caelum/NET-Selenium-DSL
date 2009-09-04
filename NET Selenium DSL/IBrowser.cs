@@ -1,6 +1,6 @@
 ﻿namespace Caelum.SelenuimDSL
 {
-    public interface IBrowser
+    public interface IBrowser<T>
     {
         IPage Open(string url);
 
@@ -8,7 +8,7 @@
 
         IPage WaitForPageLoad(long timeout);
 
-        object GetDelegate();
+        T GetDelegate();
 
         IPage Window(string id);
     }

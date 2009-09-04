@@ -86,7 +86,7 @@ namespace Caelum.SeleniumDSL
 
         public IPage WaitUntil(string Condition, long Timeout)
         {
-            selenium.WaitForCondition("this.browserbot.getCurrentWindow()." + Condition, Timeout.ToString())
+            selenium.WaitForCondition("this.browserbot.getCurrentWindow()." + Condition, Timeout.ToString());
             return this;
         }
 

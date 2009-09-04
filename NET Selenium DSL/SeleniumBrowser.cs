@@ -4,7 +4,7 @@ using Selenium;
 
 namespace Caelum.SeleniumDSL
 {
-    public class SeleniumBrowser : IBrowser
+    public class SeleniumBrowser : IBrowser<ISelenium>
     {
         private ISelenium selenium;
         private long timeout;
@@ -39,9 +39,9 @@ namespace Caelum.SeleniumDSL
             return CurrentPage();
         }
 
-        public object GetDelegate()
+        public ISelenium GetDelegate()
         {
-            throw new NotImplementedException();
+            return selenium;
         }
 
         public IPage Window(string id)

@@ -35,22 +35,24 @@ namespace Caelum.SeleniumDSL
 
         public ISelectField Select(string SelectField)
         {
-            throw new NotImplementedException();
+            return new SelectField(selenium, this, SelectField);
         }
 
         public IForm Check(string Checkbox)
         {
-            throw new NotImplementedException();
+            selenium.Check(Checkbox);
+            return this;
         }
 
         public IForm Uncheck(string Checkbox)
         {
-            throw new NotImplementedException();
+            selenium.Uncheck(Checkbox);
+            return this;
         }
 
         public bool IsChecked(string Checkbox)
         {
-            throw new NotImplementedException();
+            return selenium.IsChecked(Checkbox);
         }
 
         public void Submit()

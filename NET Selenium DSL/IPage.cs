@@ -26,7 +26,7 @@ namespace Caelum.SelenuimDSL
 
         string Title();
 
-        Array Array(string Name);
+        //Array Array(string Name);
 
         string Invoke(string Cmd);
 

@@ -1,5 +1,6 @@
 ﻿using Caelum.SelenuimDSL;
 using Selenium;
+using TableSpace = Caelum.SeleniumDSL.Table;
 
 namespace Caelum.SeleniumDSL
 {
@@ -21,92 +22,101 @@ namespace Caelum.SeleniumDSL
 
         public IContentTag Div(string Id)
         {
-            throw new System.NotImplementedException();
+            return new ContentTag(selenium, Id);
         }
 
         public IContentTag Span(string Id)
         {
-            throw new System.NotImplementedException();
+            return new ContentTag(selenium, Id);
         }
 
         public ITable Table(string Id)
         {
-            throw new System.NotImplementedException();
+            return new TableSpace::Table(selenium, Id);
         }
 
         public IPage Navigate(string Element)
         {
-            throw new System.NotImplementedException();
+            selenium.Click(Element);
+            selenium.WaitForPageToLoad(timeout.ToString());
+            return this;
         }
 
         public IPage NavigateLink(string Text)
         {
-            throw new System.NotImplementedException();
+            return Navigate("link="+Text);
         }
 
         public IPage Click(string Element)
         {
-            throw new System.NotImplementedException();
+            selenium.Click(Element);
+            return this;
         }
 
         public IPage ClickLink(string Text)
         {
-            throw new System.NotImplementedException();
+            return Click("link=" + Text);
         }
 
         public IPage DoubleClick(string Element)
         {
-            throw new System.NotImplementedException();
+            selenium.DoubleClick(Element);
+            return this;
         }
 
         public bool HasLink(string Link)
         {
-            throw new System.NotImplementedException();
+            return selenium.IsTextPresent(Link);
         }
 
         public string Title()
         {
-            throw new System.NotImplementedException();
+            return selenium.GetTitle();
         }
 
-        public System.Array Array(string Name)
-        {
-            throw new System.NotImplementedException();
-        }
+        //public System.Array Array(string Name)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
 
         public string Invoke(string Cmd)
         {
-            throw new System.NotImplementedException();
+            return selenium.GetEval("this.browserbot.getCurrentWindow()." + Cmd);
         }
 
         public IPage WaitUntil(string Condition, long Timeout)
         {
-            throw new System.NotImplementedException();
+            selenium.WaitForCondition("this.browserbot.getCurrentWindow()." + Condition, Timeout.ToString())
+            return this;
         }
 
         public void Screenshot(string FileName)
         {
-            throw new System.NotImplementedException();
+            selenium.CaptureScreenshot(FileName);
         }
 
         public IPage Refresh()
         {
-            throw new System.NotImplementedException();
+            selenium.Refresh();
+            return this;
         }
 
         public IPage MouseDown(string Element)
         {
-            throw new System.NotImplementedException();
+            selenium.MouseDown(Element);
+            return this;
         }
 
         public IPage MouseUp(string Element)
         {
-            throw new System.NotImplementedException();
+            selenium.MouseUp(Element);
+            return this;
         }
 
         public IPage DragAndDrop(string FromElement, string ToElement)
         {
-            throw new System.NotImplementedException();
+            selenium.DragAndDrop(FromElement, ToElement);
+            return this;
         }
 
     }

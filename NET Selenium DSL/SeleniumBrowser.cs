@@ -7,25 +7,36 @@ namespace Caelum.SeleniumDSL
     public class SeleniumBrowser : IBrowser
     {
         private ISelenium selenium;
+        private long timeout;
 
-        public SeleniumBrowser(ISelenium selenium)
+        public SeleniumBrowser(ISelenium Selenium)
         {
-            this.selenium = selenium;
+            this.selenium = Selenium;
+            this.timeout = 10000;
+        }
+
+        public SeleniumBrowser(ISelenium Selenium, long Timeout)
+        {
+            this.selenium = Selenium;
+            this.timeout = Timeout;
         }
 
         public IPage Open(string url)
         {
-            throw new NotImplementedException();
+            selenium.Open(url);
+            selenium.WaitForPageToLoad(timeout.ToString());
+            return CurrentPage();
         }
 
         public IPage CurrentPage()
         {
-            throw new NotImplementedException();
+            return new Page(selenium, timeout);
         }
 
         public IPage WaitForPageLoad(long timeout)
         {
-            throw new NotImplementedException();
+            selenium.WaitForPageToLoad(timeout.ToString());
+            return CurrentPage();
         }
 
         public object GetDelegate()

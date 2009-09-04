@@ -31,8 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Field.cs" />
+    <Compile Include="Form.cs" />
+    <Compile Include="Page.cs" />
     <Compile Include="Search\IRowMatcher.cs" />
     <Compile Include="Search\IRowVisitor.cs" />
+    <Compile Include="SelectField.cs" />
     <Compile Include="SeleniumBrowser.cs" />
     <Compile Include="Table\ICell.cs" />
     <Compile Include="Table\IColumn.cs" />
@@ -45,7 +49,6 @@
     <Compile Include="IPage.cs" />
     <Compile Include="ISelectField.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="java\seleniumdsl\src\test\resources\mypage.jsp" />

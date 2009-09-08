@@ -1,4 +1,5 @@
-﻿namespace Caelum.SelenuimDSL
+﻿using Caelum.SelenuimDSL;
+namespace Caelum.SeleniumDSL
 {
     public interface IBrowser<T>
     {

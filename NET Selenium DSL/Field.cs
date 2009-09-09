@@ -9,40 +9,40 @@ namespace Caelum.SeleniumDSL
     public class Field : IField
     {
         private ISelenium selenium;
-        private long timeout;
-        private string name;
+        private IForm form;
+        private string id;
 
-        public Field(ISelenium Selenium, long Timeout, string Name)
+        public Field(ISelenium Selenium, IForm Form, string Id)
         {
             this.selenium = Selenium;
-            this.timeout = Timeout;
-            this.name = Name;
+            this.form = Form;
+            this.id = Id;
         }
 
         public IForm Type(string Content)
         {
-            throw new NotImplementedException();
+            selenium.Type(id, Content);
+            return form;
         }
 
         public bool Contains(string Content)
         {
-            throw new NotImplementedException();
+            return selenium.GetValue(id).Contains(Content);
         }
 
         public string Content()
         {
-            throw new NotImplementedException();
+            return selenium.GetValue(id);
         }
 
         public void Blur()
         {
-            throw new NotImplementedException();
+            selenium.FireEvent(id, "blur");
         }
 
         public void Change()
         {
-            throw new NotImplementedException();
+            selenium.FireEvent(id, "change");
         }
-
     }
 }

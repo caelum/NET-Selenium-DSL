@@ -19,7 +19,7 @@ namespace Caelum.SeleniumDSL
 
         public IField Field(string Field)
         {
-            return new Field(selenium, timeout, Field);
+            return new Field(selenium, this, Field);
         }
 
         public void Click(string Element)

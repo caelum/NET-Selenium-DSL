@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{702A2955-1922-4538-B5EA-4749552F2DFE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Caelum.SeleniumDSL</RootNamespace>
+    <AssemblyName>NET Selenium DSL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ContentTag.cs" />
+    <Compile Include="Field.cs" />
+    <Compile Include="Form.cs" />
+    <Compile Include="Page.cs" />
+    <Compile Include="Search\IRowMatcher.cs" />
+    <Compile Include="Search\IRowVisitor.cs" />
+    <Compile Include="SelectField.cs" />
+    <Compile Include="SeleniumBrowser.cs" />
+    <Compile Include="Table\Table.cs" />
+    <Compile Include="Table\ICell.cs" />
+    <Compile Include="Table\IColumn.cs" />
+    <Compile Include="Table\IRow.cs" />
+    <Compile Include="Table\ITable.cs" />
+    <Compile Include="IField.cs" />
+    <Compile Include="IContentTag.cs" />
+    <Compile Include="IBrowser.cs" />
+    <Compile Include="IForm.cs" />
+    <Compile Include="IPage.cs" />
+    <Compile Include="ISelectField.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="java\seleniumdsl\src\test\resources\mypage.jsp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\Browser.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\ContentTag.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\DefaultBrowser.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\DefaultContentTag.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\DefaultField.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\DefaultForm.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\DefaultPage.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\DefaultSelectField.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\extjs\DefaultRecord.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\extjs\ExtJsGrid.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\extjs\Record.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\extjs\Store.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\Field.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\Form.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\hamcrest\ColumnContainsMatcher.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\hamcrest\ColumnContainsPartialMatcher.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\hamcrest\ContainsColumnMatcher.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\hamcrest\ContainsOptionMatcher.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\hamcrest\DivContainsMatcher.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\hamcrest\DivExistsMatcher.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\hamcrest\HasLinkMatcher.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\hamcrest\IsCheckedMatcher.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\hamcrest\SeleniumDslMatchers.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\HtmlFormWrapper.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\HtmlUnitArray.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\HtmlUnitBrowser.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\HtmlUnitCell.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\HtmlUnitContentTag.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\HtmlUnitElement.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\HtmlUnitField.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\HtmlUnitForm.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\HtmlUnitPage.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\HtmlUnitRow.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\HtmlUnitSelectField.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\HtmlUnitTable.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\HtmlUnitTextArea.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\InexistantTable.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\htmlunit\NullCell.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\js\Array.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\js\DefaultArray.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\js\DefaultElement.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\js\Element.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\Page.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\search\ContainsAllMatcher.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\search\EqualsMatcher.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\search\Matcher.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\search\RowFinder.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\search\RowMatcher.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\search\RowVisitor.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\search\Search.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\search\TableCriteria.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\search\TableCriterion.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\SelectField.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\Cell.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\Column.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\DefaultCell.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\DefaultColumn.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\DefaultRow.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\DefaultTable.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\layout\FullTableLayout.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\layout\PlainPlusThTableLayout.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\layout\PlainTableLayout.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\layout\TableLayout.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\layout\TableLayoutChooser.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\layout\TableLayoutHelper.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\Row.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\table\Table.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\ByIdOrNameOrXPath.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\ByLink.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\table\layout\WebDriverFullTableLayout.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\table\layout\WebDriverPlainPlusThTableLayout.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\table\layout\WebDriverPlainTableLayout.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\table\layout\WebDriverTableLayoutChooser.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\table\layout\WebDriverTableLayoutHelper.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\table\WebDriverCell.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\table\WebDriverColumn.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\table\WebDriverRow.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\table\WebDriverTable.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\WebDriverBrowser.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\WebDriverContentTag.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\WebDriverField.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\WebDriverForm.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\WebDriverPage.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\WebDriverSelectField.java" />
+    <Content Include="java\seleniumdsl\src\main\java\br\com\caelum\seleniumdsl\webdriver\WebDriverTextArea.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\ContentTagTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\DefaultBrowserTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\DefaultFieldTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\DefaultFormTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\DefaultPageTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\DefaultSelectFieldTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\Scrap.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\integration\FormTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\integration\GeneralTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\integration\SeleniumTestCase.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\integration\TableTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\integration\WaiterTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\table\FullTableTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\table\PlainTableTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\table\PlainThTableTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\webdriver\integration\FormTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\webdriver\integration\GeneralTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\webdriver\integration\LinkTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\webdriver\integration\PopupTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\webdriver\integration\TableTest.java" />
+    <Content Include="java\seleniumdsl\src\test\java\br\com\caelum\seleniumdsl\test\webdriver\integration\WebDriverTestCase.java" />
+    <Content Include="java\seleniumdsl\src\test\resources\form.html" />
+    <Content Include="java\seleniumdsl\src\test\resources\link.html" />
+    <Content Include="java\seleniumdsl\src\test\resources\main.html" />
+    <Content Include="java\seleniumdsl\src\test\resources\openPopup.html" />
+    <Content Include="java\seleniumdsl\src\test\resources\popup.html" />
+    <Content Include="java\seleniumdsl\src\test\resources\table.html" />
+    <Content Include="java\seleniumdsl\src\test\resources\waiting.html" />
+    <Content Include="java\seleniumdsl\src\test\resources\WEB-INF\web.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.Selenium.Core, Version=0.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ThoughtWorks.Selenium.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

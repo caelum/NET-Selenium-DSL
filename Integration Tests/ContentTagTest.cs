@@ -13,13 +13,26 @@ namespace Integration.Caelum.SeleniumDSL
     [TestClass]
     public class ContentTagTest : IntegrationTest
     {
+
         [TestMethod]
         public void TestExists()
         {
-            IBrowser<ISelenium> browser = new SeleniumBrowser(selenium);
-            browser.Open("/index.htm");
-
+            openIndex();
             Assert.IsTrue(browser.CurrentPage().Div("oneDiv").Exists());
+        }
+
+        [TestMethod]
+        public void TestInnerHTML()
+        {
+            openIndex();
+            Assert.AreEqual("Div content", browser.CurrentPage().Div("oneDiv").InnerHTML());
+        }
+
+        [TestMethod]
+        public void TestContains()
+        {
+            openIndex();
+            Assert.IsTrue(browser.CurrentPage().Div("oneDiv").Contains("content"));
         }
     }
 }

@@ -9,16 +9,16 @@ namespace Caelum.SeleniumDSL
         private ISelenium selenium;
         private long timeout;
 
-        public SeleniumBrowser(ISelenium Selenium)
+        public SeleniumBrowser(ISelenium selenium)
         {
-            this.selenium = Selenium;
+            this.selenium = selenium;
             this.timeout = 10000;
         }
 
-        public SeleniumBrowser(ISelenium Selenium, long Timeout)
+        public SeleniumBrowser(ISelenium selenium, long timeout)
         {
-            this.selenium = Selenium;
-            this.timeout = Timeout;
+            this.selenium = selenium;
+            this.timeout = timeout;
         }
 
         public IPage Open(string url)

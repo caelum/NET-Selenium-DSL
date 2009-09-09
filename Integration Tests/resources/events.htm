@@ -1,0 +1,19 @@
+﻿<html>
+  <script type="text/javascript">
+    function blurFunction() {
+      document.getElementById("oneDiv").innerHTML = "blur";
+    }
+
+    function changeFunction() {
+      document.getElementById("oneDiv").innerHTML = "change";
+    }
+  </script>
+  <body>
+    <form id="oneForm">
+      <input type="text" id="blurInput" onblur="blurFunction()" />
+      <input type="text" id="changeInput" onchange="changeFunction()" />
+    </form>
+
+    <div id="oneDiv"></div>
+  </body>
+</html>

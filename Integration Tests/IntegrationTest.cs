@@ -5,6 +5,7 @@ using System.Text;
 using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Selenium;
+using Caelum.SeleniumDSL;
 
 namespace Integration.Caelum.SeleniumDSL
 {
@@ -14,6 +15,8 @@ namespace Integration.Caelum.SeleniumDSL
         protected HttpServer.HttpServer server;
 
         protected ISelenium selenium;
+
+        protected IBrowser<ISelenium> browser;
 
         [TestInitialize]
         public void SetUp()
@@ -25,13 +28,15 @@ namespace Integration.Caelum.SeleniumDSL
             selenium = new DefaultSelenium("localhost", 4444, "*firefox", "http://localhost:9100");
             selenium.Start();
             selenium.SetContext("NET Selenium DSL Tests");
+
+            browser = new SeleniumBrowser(selenium);
         }
 
         [TestCleanup]
         public void TearDown()
         {
-            server.Stop();
             selenium.Stop();
+            server.Stop();
         }
 
         public void openIndex()

@@ -4,3 +4,7 @@
 *obj*
 TestResults
 *ConsoleApplication*
+*.application
+*.deploy
+*.manifest
+*.csproj.user

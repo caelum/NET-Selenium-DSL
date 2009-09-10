@@ -41,7 +41,12 @@ namespace Integration.Caelum.SeleniumDSL
 
         public void openIndex()
         {
-            selenium.Open("/index.htm");
+            browser.Open("/index.htm");
+        }
+
+        public void openEvents()
+        {
+            browser.Open("/events.htm");
         }
     }
 }

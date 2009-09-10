@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FieldTest.cs" />
     <Compile Include="FileReaderModule.cs" />
     <Compile Include="ContentTagTest.cs" />
     <Compile Include="IntegrationTest.cs" />

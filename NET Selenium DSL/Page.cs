@@ -9,64 +9,64 @@ namespace Caelum.SeleniumDSL
         private ISelenium selenium;
         private long timeout;
 
-        public Page(ISelenium Selenium, long Timeout)
+        public Page(ISelenium selenium, long timeout)
         {
-            this.selenium = Selenium;
-            this.timeout = Timeout;
+            this.selenium = selenium;
+            this.timeout = timeout;
         }
 
-        public IForm Form(string Id)
+        public IForm Form(string id)
         {
-            return new Form(selenium, timeout, Id);
+            return new Form(selenium, timeout, id);
         }
 
-        public IContentTag Div(string Id)
+        public IContentTag Div(string id)
         {
-            return new ContentTag(selenium, Id);
+            return new ContentTag(selenium, id);
         }
 
-        public IContentTag Span(string Id)
+        public IContentTag Span(string id)
         {
-            return new ContentTag(selenium, Id);
+            return new ContentTag(selenium, id);
         }
 
-        public ITable Table(string Id)
+        public ITable Table(string id)
         {
-            return new TableSpace::Table(selenium, Id);
+            return new TableSpace::Table(selenium, id);
         }
 
-        public IPage Navigate(string Element)
+        public IPage Navigate(string element)
         {
-            selenium.Click(Element);
+            selenium.Click(element);
             selenium.WaitForPageToLoad(timeout.ToString());
             return this;
         }
 
-        public IPage NavigateLink(string Text)
+        public IPage NavigateLink(string text)
         {
-            return Navigate("link="+Text);
+            return Navigate("link="+text);
         }
 
-        public IPage Click(string Element)
+        public IPage Click(string element)
         {
-            selenium.Click(Element);
+            selenium.Click(element);
             return this;
         }
 
-        public IPage ClickLink(string Text)
+        public IPage ClickLink(string text)
         {
-            return Click("link=" + Text);
+            return Click("link=" + text);
         }
 
-        public IPage DoubleClick(string Element)
+        public IPage DoubleClick(string element)
         {
-            selenium.DoubleClick(Element);
+            selenium.DoubleClick(element);
             return this;
         }
 
-        public bool HasLink(string Link)
+        public bool HasLink(string link)
         {
-            return selenium.IsTextPresent(Link);
+            return selenium.IsTextPresent(link);
         }
 
         public string Title()
@@ -79,20 +79,20 @@ namespace Caelum.SeleniumDSL
         //    throw new System.NotImplementedException();
         //}
 
-        public string Invoke(string Cmd)
+        public string Invoke(string cmd)
         {
-            return selenium.GetEval("this.browserbot.getCurrentWindow()." + Cmd);
+            return selenium.GetEval("this.browserbot.getCurrentWindow()." + cmd);
         }
 
-        public IPage WaitUntil(string Condition, long Timeout)
+        public IPage WaitUntil(string condition, long timeout)
         {
-            selenium.WaitForCondition("this.browserbot.getCurrentWindow()." + Condition, Timeout.ToString());
+            selenium.WaitForCondition("this.browserbot.getCurrentWindow()." + condition, timeout.ToString());
             return this;
         }
 
-        public void Screenshot(string FileName)
+        public void Screenshot(string filePath)
         {
-            selenium.CaptureScreenshot(FileName);
+            selenium.CaptureScreenshot(filePath);
         }
 
         public IPage Refresh()
@@ -101,21 +101,21 @@ namespace Caelum.SeleniumDSL
             return this;
         }
 
-        public IPage MouseDown(string Element)
+        public IPage MouseDown(string element)
         {
-            selenium.MouseDown(Element);
+            selenium.MouseDown(element);
             return this;
         }
 
-        public IPage MouseUp(string Element)
+        public IPage MouseUp(string element)
         {
-            selenium.MouseUp(Element);
+            selenium.MouseUp(element);
             return this;
         }
 
-        public IPage DragAndDrop(string FromElement, string ToElement)
+        public IPage DragAndDrop(string source, string destination)
         {
-            selenium.DragAndDrop(FromElement, ToElement);
+            selenium.DragAndDrop(source, destination);
             return this;
         }
 

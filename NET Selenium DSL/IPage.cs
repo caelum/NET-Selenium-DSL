@@ -4,42 +4,42 @@ namespace Caelum.SelenuimDSL
 {
     public interface IPage
     {
-        IForm Form(string Id);
+        IForm Form(string id);
 
-        IContentTag Div(string Id);
+        IContentTag Div(string id);
 
-        IContentTag Span(string Id);
+        IContentTag Span(string id);
 
-        ITable Table(string Id);
+        ITable Table(string id);
 
-        IPage Navigate(string Element);
+        IPage Navigate(string element);
 
-        IPage NavigateLink(string Text);
+        IPage NavigateLink(string text);
 
-        IPage Click(string Element);
+        IPage Click(string element);
 
-        IPage ClickLink(string Text);
+        IPage ClickLink(string text);
 
-        IPage DoubleClick(string Element);
+        IPage DoubleClick(string element);
 
-        bool HasLink(string Link);
+        bool HasLink(string link);
 
         string Title();
 
         //Array Array(string Name);
 
-        string Invoke(string Cmd);
+        string Invoke(string cmd);
 
-        IPage WaitUntil(string Condition, long Timeout);
+        IPage WaitUntil(string condition, long timeout);
 
-        void Screenshot(string FileName);
+        void Screenshot(string filePath);
 
         IPage Refresh();
 
-        IPage MouseDown(string Element);
+        IPage MouseDown(string element);
 
-        IPage MouseUp(string Element);
+        IPage MouseUp(string element);
 
-        IPage DragAndDrop(string FromElement, string ToElement);
+        IPage DragAndDrop(string source, string destination);
     }
 }

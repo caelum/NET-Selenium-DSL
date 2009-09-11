@@ -3,19 +3,19 @@ namespace Caelum.SelenuimDSL
 {
     public interface IForm
     {
-        IField Field(string Field);
+        IField Field(string field);
 
-        void Click(string Element);
+        void Click(string element);
 
-        void Navigate(string Element);
+        void Navigate(string element);
 
-        ISelectField Select(string SelectField);
+        ISelectField Select(string selectField);
 
-        IForm Check(string Checkbox);
+        IForm Check(string checkbox);
 
-        IForm Uncheck(string Checkbox);
+        IForm Uncheck(string checkbox);
 
-        bool IsChecked(string Checkbox);
+        bool IsChecked(string checkbox);
 
         void Submit();
     }

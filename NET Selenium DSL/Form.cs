@@ -10,49 +10,49 @@ namespace Caelum.SeleniumDSL
         private long timeout;
         private string id;
 
-        public Form(ISelenium Selenium, long Timeout, string Id)
+        public Form(ISelenium selenium, long timeout, string id)
         {
-            this.selenium = Selenium;
-            this.timeout = Timeout;
-            this.id = Id;
+            this.selenium = selenium;
+            this.timeout = timeout;
+            this.id = id;
         }
 
-        public IField Field(string Field)
+        public IField Field(string field)
         {
-            return new Field(selenium, this, Field);
+            return new Field(selenium, this, field);
         }
 
-        public void Click(string Element)
+        public void Click(string element)
         {
-            selenium.Click(Element);
+            selenium.Click(element);
         }
 
-        public void Navigate(string Element)
+        public void Navigate(string element)
         {
-            selenium.Click(Element);
+            selenium.Click(element);
             selenium.WaitForPageToLoad(timeout.ToString());
         }
 
-        public ISelectField Select(string SelectField)
+        public ISelectField Select(string selectField)
         {
-            return new SelectField(selenium, this, SelectField);
+            return new SelectField(selenium, this, selectField);
         }
 
-        public IForm Check(string Checkbox)
+        public IForm Check(string checkbox)
         {
-            selenium.Check(Checkbox);
+            selenium.Check(checkbox);
             return this;
         }
 
-        public IForm Uncheck(string Checkbox)
+        public IForm Uncheck(string checkbox)
         {
-            selenium.Uncheck(Checkbox);
+            selenium.Uncheck(checkbox);
             return this;
         }
 
-        public bool IsChecked(string Checkbox)
+        public bool IsChecked(string checkbox)
         {
-            return selenium.IsChecked(Checkbox);
+            return selenium.IsChecked(checkbox);
         }
 
         public void Submit()

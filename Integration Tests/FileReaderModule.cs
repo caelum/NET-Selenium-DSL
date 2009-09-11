@@ -4,8 +4,10 @@ using HttpServer;
 using HttpServer.Sessions;
 using System.Collections.Generic;
 using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Integration.Caelum.SeleniumDSL
 {
+    
     public class FileReaderModule : HttpModule
     {
         private List<string> ignoredPaths;
@@ -24,7 +26,7 @@ namespace Integration.Caelum.SeleniumDSL
             TextWriter writer = new StreamWriter(response.Body);
             try
             {
-                string fileContents = File.ReadAllText("../../../Integration Tests/resources" + request.Uri.AbsolutePath);
+                string fileContents = File.ReadAllText("resources" + request.Uri.AbsolutePath);
                 writer.Write(fileContents);
             }
             catch (Exception ex)

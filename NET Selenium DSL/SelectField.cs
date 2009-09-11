@@ -11,23 +11,23 @@ namespace Caelum.SeleniumDSL
         private IForm form;
         private string id;
 
-        public SelectField(ISelenium Selenium, IForm Form, string Id)
+        public SelectField(ISelenium selenium, IForm form, string id)
         {
-            this.selenium = Selenium;
-            this.form = Form;
-            this.id = Id;
+            this.selenium = selenium;
+            this.form = form;
+            this.id = id;
         }
 
-        public IForm Choose(string Value)
+        public IForm Choose(string value)
         {
-            selenium.Select(id, Value);
+            selenium.Select(id, value);
             return form;
         }
 
-        public IForm Choose(int Index)
+        public IForm Choose(int index)
         {
             string[] options = selenium.GetSelectOptions(id);
-            selenium.Select(id, options[Index]);
+            selenium.Select(id, options[index]);
             return form;
         }
 

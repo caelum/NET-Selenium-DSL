@@ -2,9 +2,9 @@
 {
     public interface ISelectField
     {
-        IForm Choose(string Value);
+        IForm Choose(string value);
 
-        IForm Choose(int Index);
+        IForm Choose(int index);
 
         string Value();
 

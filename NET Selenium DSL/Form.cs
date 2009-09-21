@@ -1,10 +1,11 @@
 ﻿using System;
 using Caelum.SelenuimDSL;
 using Selenium;
+using System.Threading;
 
 namespace Caelum.SeleniumDSL
 {
-    public class Form : IForm
+    internal class Form : IForm
     {
         private ISelenium selenium;
         private long timeout;

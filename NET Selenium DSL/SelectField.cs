@@ -5,7 +5,7 @@ using Selenium;
 
 namespace Caelum.SeleniumDSL
 {
-    public class SelectField : ISelectField
+    internal class SelectField : ISelectField
     {
         private ISelenium selenium;
         private IForm form;

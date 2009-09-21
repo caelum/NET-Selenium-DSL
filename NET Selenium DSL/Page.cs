@@ -1,10 +1,11 @@
 ﻿using Caelum.SelenuimDSL;
 using Selenium;
 using TableSpace = Caelum.SeleniumDSL.Table;
+using Unit.Caelum.SeleniumDSL;
 
 namespace Caelum.SeleniumDSL
 {
-    public class Page : IPage
+    internal class Page : IPage
     {
         private ISelenium selenium;
         private long timeout;

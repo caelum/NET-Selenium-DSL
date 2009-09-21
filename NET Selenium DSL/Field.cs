@@ -6,7 +6,7 @@ using Caelum.SelenuimDSL;
 
 namespace Caelum.SeleniumDSL
 {
-    public class Field : IField
+    internal class Field : IField
     {
         private ISelenium selenium;
         private IForm form;

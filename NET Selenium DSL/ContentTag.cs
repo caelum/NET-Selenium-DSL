@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using Selenium;
+using Caelum.SeleniumDSL;
 
-namespace Caelum.SeleniumDSL
+namespace Unit.Caelum.SeleniumDSL
 {
-    public class ContentTag : IContentTag
+    internal class ContentTag : IContentTag
     {
 
         private ISelenium selenium;

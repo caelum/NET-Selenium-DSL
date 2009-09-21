@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Caelum.SeleniumDSL;
+using Unit.Caelum.SeleniumDSL;
 
 namespace Unit.Caelum.SeleniumDSL
 {

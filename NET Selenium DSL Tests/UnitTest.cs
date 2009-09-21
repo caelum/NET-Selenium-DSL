@@ -23,7 +23,7 @@ namespace Unit.Caelum.SeleniumDSL
         [TestCleanup]
         public void TearDown()
         {
-            selenium.VerifyAll();
+            factory.VerifyAll();
         }
     }
 }

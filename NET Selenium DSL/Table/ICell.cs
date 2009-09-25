@@ -16,6 +16,6 @@
 
         bool Checked();
 
-        bool Contains(string Content);
+        bool Contains(string content);
     }
 }

@@ -7,11 +7,11 @@ namespace Caelum.SeleniumDSL
     {
         string GetType();
 
-        IColumn Column(int ColumnIndex);
+        IColumn Column(int columnIndex);
 
-        IColumn Column(string ColumnName);
+        IColumn Column(string columnName);
 
-        int GetColCount();
+        int GetColumnCount();
 
         int GetRowCount();
 
@@ -19,21 +19,21 @@ namespace Caelum.SeleniumDSL
 
         IRow Header();
 
-        IRow Row(int Row);
+        IRow Row(int row);
 
-        ICell Cell(int Row, int Col);
+        ICell Cell(int row, int column);
 
-        ICell Cell(int Row, string Col);
+        ICell Cell(int row, string column);
 
         string GetId();
 
         bool Exists();
 
-        void Iterate(IRowVisitor Visitor);
+        void Iterate(IRowVisitor visitor);
 
-        int FindColumn(string ColumnName);
+        int FindColumn(string columnName);
 
-        IRowMatcher Select(IRowMatcher Matcher);
+        IRowMatcher Select(IRowMatcher matcher);
 
         //ITableCriteria CreateCriteria();
 

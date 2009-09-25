@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using Selenium;
 
@@ -8,28 +7,38 @@ namespace Caelum.SeleniumDSL.Table
 {
     internal class Column : IColumn
     {
-        private ISelenium selenium;
+        private ITable table;
         private int columnNumber;
 
-        public Column(ISelenium selenium, int columnNumber)
+        public Column(ITable table, int columnNumber)
         {
-            this.selenium = selenium;
+            this.table = table;
             this.columnNumber = columnNumber;
         }
 
-        public bool Contains(string Text)
+        public bool Contains(string text)
         {
-            throw new NotImplementedException();
+            return Find(text) != -1;
         }
 
-        public bool ContainsPartial(string Value)
+        // TODO: implement XPath search
+        public bool ContainsPartial(string value)
         {
-            throw new NotImplementedException();
+            int rowCount = table.GetRowCount();
+            for (int i = 0; i < rowCount; i++)
+                if (table.Cell(i, columnNumber).Contains(value))
+                    return true;
+            return false;
         }
 
-        public int Find(string Text)
+        // TODO: implement XPath search
+        public int Find(string text)
         {
-            throw new NotImplementedException();
+            int rowCount = table.GetRowCount();
+            for (int i = 0; i < rowCount; i++)
+                if (table.Cell(i, columnNumber).Contains(text))
+                    return i;
+            return -1;
         }
 
     }

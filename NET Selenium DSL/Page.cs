@@ -2,6 +2,7 @@
 using Selenium;
 using TableSpace = Caelum.SeleniumDSL.Table;
 using Unit.Caelum.SeleniumDSL;
+using Caelum.SeleniumDSL.Table.Layout;
 
 namespace Caelum.SeleniumDSL
 {
@@ -33,7 +34,8 @@ namespace Caelum.SeleniumDSL
 
         public ITable Table(string id)
         {
-            return new TableSpace::Table(selenium, id);
+            ITableLayout layout = new FullTableLayout(selenium, id);
+            return new TableSpace::Table(selenium, layout, id);
         }
 
         public IPage Navigate(string element)

@@ -4,18 +4,21 @@ using System.Text;
 using Selenium;
 using Caelum.SeleniumDSL;
 using Caelum.SeleniumDSL.Search;
+using Caelum.SeleniumDSL.Table.Layout;
 
 namespace Caelum.SeleniumDSL.Table
 {
-    public class Table : ITable
+    internal class Table : ITable
     {
         private ISelenium selenium;
+        private ITableLayout layout;
         private string id;
 
-        public Table(ISelenium Selenium, string Id)
+        public Table(ISelenium selenium, ITableLayout layout, string id)
         {
-            this.selenium = Selenium;
-            this.id = Id;
+            this.selenium = selenium;
+            this.layout = layout;
+            this.id = id;
         }
 
         public new string GetType()
@@ -23,29 +26,29 @@ namespace Caelum.SeleniumDSL.Table
             throw new NotImplementedException();
         }
 
-        public IColumn Column(int ColumnIndex)
+        public IColumn Column(int columnIndex)
+        {
+            return new Column(this, columnIndex);
+        }
+
+        public IColumn Column(string columnName)
         {
             throw new NotImplementedException();
         }
 
-        public IColumn Column(string ColumnName)
+        public int GetColumnCount()
         {
-            throw new NotImplementedException();
-        }
-
-        public int GetColCount()
-        {
-            throw new NotImplementedException();
+            return layout.GetColumnCount();
         }
 
         public int GetRowCount()
         {
-            throw new NotImplementedException();
+            return layout.GetRowCount();
         }
 
         public int GetContentCount()
         {
-            throw new NotImplementedException();
+            return layout.GetContentCount();
         }
 
         public IRow Header()
@@ -53,17 +56,17 @@ namespace Caelum.SeleniumDSL.Table
             throw new NotImplementedException();
         }
 
-        public IRow Row(int Row)
+        public IRow Row(int row)
         {
             throw new NotImplementedException();
         }
 
-        public ICell Cell(int Row, int Col)
+        public ICell Cell(int row, int col)
         {
             throw new NotImplementedException();
         }
 
-        public ICell Cell(int Row, string Col)
+        public ICell Cell(int row, string col)
         {
             throw new NotImplementedException();
         }
@@ -78,17 +81,17 @@ namespace Caelum.SeleniumDSL.Table
             throw new NotImplementedException();
         }
 
-        public void Iterate(IRowVisitor Visitor)
+        public void Iterate(IRowVisitor visitor)
         {
             throw new NotImplementedException();
         }
 
-        public int FindColumn(string ColumnName)
+        public int FindColumn(string columnName)
         {
             throw new NotImplementedException();
         }
 
-        public IRowMatcher Select(IRowMatcher Matcher)
+        public IRowMatcher Select(IRowMatcher matcher)
         {
             throw new NotImplementedException();
         }

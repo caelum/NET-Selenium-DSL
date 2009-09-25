@@ -48,5 +48,11 @@ namespace Integration.Caelum.SeleniumDSL
         {
             browser.Open("/events.htm");
         }
+
+        public void openFullTable()
+        {
+            browser.Open("/fulltable.htm");
+        }
     }
+
 }

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{E296646A-8D4D-4F70-BE6B-0F72A64B2A94}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -81,11 +81,13 @@
     <Compile Include="FieldTest.cs" />
     <Compile Include="FileReaderModule.cs" />
     <Compile Include="ContentTagTest.cs" />
+    <Compile Include="FullTableTest.cs" />
     <Compile Include="IntegrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\events.htm" />
+    <Content Include="resources\fulltable.htm" />
     <Content Include="resources\index.htm" />
   </ItemGroup>
   <ItemGroup>

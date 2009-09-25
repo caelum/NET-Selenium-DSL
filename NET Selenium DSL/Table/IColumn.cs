@@ -2,10 +2,10 @@
 {
     public interface IColumn
     {
-        bool Contains(string Text);
+        bool Contains(string text);
 
-        bool ContainsPartial(string Value);
+        bool ContainsPartial(string value);
 
-        int Find(string Text);
+        int Find(string text);
     }
 }

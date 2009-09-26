@@ -113,7 +113,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Caelum.SeleniumDSL\NET Selenium DSL.csproj">
+    <ProjectReference Include="..\Caelum.SeleniumDSL\Caelum.SeleniumDSL.csproj">
       <Project>{702A2955-1922-4538-B5EA-4749552F2DFE}</Project>
       <Name>Caelum.SeleniumDSL</Name>
     </ProjectReference>

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6202776a-b912-4c43-a245-5c08135cf639</ProjectGuid>
+    <ProjectGuid>{42317374-060E-4020-8F89-9C8B22206EF8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Caelum.SeleniumDSL.Default</RootNamespace>
@@ -45,8 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ContentTag.cs" />
+    <Compile Include="Field.cs" />
+    <Compile Include="Form.cs" />
+    <Compile Include="Page.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectField.cs" />
+    <Compile Include="SeleniumBrowser.cs" />
+    <Compile Include="Table\Cell.cs" />
+    <Compile Include="Table\Column.cs" />
+    <Compile Include="Table\Layout\FullTableLayout.cs" />
+    <Compile Include="Table\Table.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

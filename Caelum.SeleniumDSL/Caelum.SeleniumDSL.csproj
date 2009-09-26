@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Caelum.SeleniumDSL</RootNamespace>
-    <AssemblyName>NET Selenium DSL</AssemblyName>
+    <AssemblyName>Caelum.SeleniumDSL</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>
@@ -33,19 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ContentTag.cs" />
-    <Compile Include="Field.cs" />
-    <Compile Include="Form.cs" />
-    <Compile Include="Page.cs" />
     <Compile Include="Search\IRowMatcher.cs" />
     <Compile Include="Search\IRowVisitor.cs" />
-    <Compile Include="SelectField.cs" />
-    <Compile Include="SeleniumBrowser.cs" />
-    <Compile Include="Table\Cell.cs" />
-    <Compile Include="Table\Column.cs" />
-    <Compile Include="Table\Layout\FullTableLayout.cs" />
     <Compile Include="Table\Layout\ITableLayout.cs" />
-    <Compile Include="Table\Table.cs" />
     <Compile Include="Table\ICell.cs" />
     <Compile Include="Table\IColumn.cs" />
     <Compile Include="Table\IRow.cs" />

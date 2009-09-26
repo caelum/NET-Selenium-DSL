@@ -1,6 +1,4 @@
-﻿using Caelum.SeleniumDSL;
-using System;
-namespace Caelum.SelenuimDSL
+﻿namespace Caelum.SeleniumDSL
 {
     public interface IPage
     {

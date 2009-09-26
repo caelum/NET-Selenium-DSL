@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Caelum.SeleniumDSL.Table.Layout
+﻿namespace Caelum.SeleniumDSL.Table.Layout
 {
     public interface ITableLayout
     {

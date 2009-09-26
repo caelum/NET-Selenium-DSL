@@ -1,5 +1,4 @@
-﻿using Caelum.SeleniumDSL;
-namespace Caelum.SelenuimDSL
+﻿namespace Caelum.SeleniumDSL
 {
     public interface IForm
     {

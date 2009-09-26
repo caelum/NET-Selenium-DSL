@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Caelum.SeleniumDSL.Table
+﻿namespace Caelum.SeleniumDSL.Table
 {
     public interface IRow
     {

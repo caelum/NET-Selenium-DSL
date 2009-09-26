@@ -1,4 +1,4 @@
-﻿namespace Caelum.SelenuimDSL
+﻿namespace Caelum.SeleniumDSL
 {
     public interface ISelectField
     {

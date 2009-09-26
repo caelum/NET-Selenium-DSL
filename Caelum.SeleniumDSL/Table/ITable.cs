@@ -1,7 +1,4 @@
-﻿using Caelum.SeleniumDSL.Table;
-using Caelum.SeleniumDSL.Search;
-
-namespace Caelum.SeleniumDSL
+﻿namespace Caelum.SeleniumDSL.Table
 {
     public interface ITable
     {

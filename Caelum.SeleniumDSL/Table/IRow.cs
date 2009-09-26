@@ -2,9 +2,9 @@
 {
     public interface IRow
     {
-        ICell Cell(int Column);
+        ICell Cell(int column);
 
-        ICell Cell(String Column);
+        ICell Cell(string column);
 
         int Index();
     }

@@ -1,4 +1,5 @@
-﻿namespace Caelum.SeleniumDSL
+﻿using Caelum.SeleniumDSL.Table;
+namespace Caelum.SeleniumDSL
 {
     public interface IPage
     {

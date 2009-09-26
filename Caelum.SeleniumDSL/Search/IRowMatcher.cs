@@ -4,7 +4,7 @@ namespace Caelum.SeleniumDSL.Search
 {
     public interface IRowMatcher
     {
-        void SetTable(ITable Table);
+        void SetTable(ITable table);
 
         IRow Next();
     }

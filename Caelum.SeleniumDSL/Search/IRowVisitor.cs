@@ -4,6 +4,6 @@ namespace Caelum.SeleniumDSL.Search
 {
     public interface IRowVisitor
     {
-        void Visit(IRow Row);
+        void Visit(IRow row);
     }
 }

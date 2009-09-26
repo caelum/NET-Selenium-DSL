@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET Selenium DSL", "NET Selenium DSL\NET Selenium DSL.csproj", "{702A2955-1922-4538-B5EA-4749552F2DFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caelum.SeleniumDSL", "Caelum.SeleniumDSL\Caelum.SeleniumDSL.csproj", "{702A2955-1922-4538-B5EA-4749552F2DFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit Tests", "NET Selenium DSL Tests\Unit Tests.csproj", "{FFE5FA6C-0F6A-43DB-B704-72F383B40C03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caelum.SeleniumDSL.Default.Tests.Unit", "Caelum.SeleniumDSL.Default.Tests.Unit\Caelum.SeleniumDSL.Default.Tests.Unit.csproj", "{FFE5FA6C-0F6A-43DB-B704-72F383B40C03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integration Tests", "Integration Tests\Integration Tests.csproj", "{E296646A-8D4D-4F70-BE6B-0F72A64B2A94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caelum.SeleniumDSL.Default.Tests.Integration", "Caelum.SeleniumDSL.Default.Tests.Integration\Caelum.SeleniumDSL.Default.Tests.Integration.csproj", "{E296646A-8D4D-4F70-BE6B-0F72A64B2A94}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication2\ConsoleApplication1.csproj", "{6C1F2CAE-06B5-48A4-82B7-E06E4FFF246C}"
 EndProject

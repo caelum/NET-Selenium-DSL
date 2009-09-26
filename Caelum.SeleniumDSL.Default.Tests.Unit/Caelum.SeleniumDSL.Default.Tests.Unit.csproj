@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{FFE5FA6C-0F6A-43DB-B704-72F383B40C03}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -57,7 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NET Selenium DSL\NET Selenium DSL.csproj">
+    <ProjectReference Include="..\Caelum.SeleniumDSL\NET Selenium DSL.csproj">
       <Project>{702A2955-1922-4538-B5EA-4749552F2DFE}</Project>
       <Name>NET Selenium DSL</Name>
     </ProjectReference>

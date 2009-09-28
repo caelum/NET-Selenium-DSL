@@ -1,8 +1,7 @@
-﻿using Caelum.SelenuimDSL;
-using Selenium;
+﻿using Selenium;
 using TableSpace = Caelum.SeleniumDSL.Table;
-using Unit.Caelum.SeleniumDSL;
 using Caelum.SeleniumDSL.Table.Layout;
+using Caelum.SeleniumDSL.Table;
 
 namespace Caelum.SeleniumDSL
 {

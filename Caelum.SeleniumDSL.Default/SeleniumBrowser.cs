@@ -1,5 +1,4 @@
-﻿using Caelum.SelenuimDSL;
-using System;
+﻿using System;
 using Selenium;
 
 namespace Caelum.SeleniumDSL

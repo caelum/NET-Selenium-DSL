@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Selenium;
 
 namespace Caelum.SeleniumDSL.Table.Layout

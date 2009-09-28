@@ -32,17 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    <Reference Include="ThoughtWorks.Selenium.Core, Version=0.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ThoughtWorks.Selenium.Core.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContentTag.cs" />
@@ -56,6 +49,12 @@
     <Compile Include="Table\Column.cs" />
     <Compile Include="Table\Layout\FullTableLayout.cs" />
     <Compile Include="Table\Table.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Caelum.SeleniumDSL\Caelum.SeleniumDSL.csproj">
+      <Project>{702A2955-1922-4538-B5EA-4749552F2DFE}</Project>
+      <Name>Caelum.SeleniumDSL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

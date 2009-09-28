@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using Caelum.SelenuimDSL;
 using Selenium;
 
 namespace Caelum.SeleniumDSL

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Caelum.SeleniumDSL;
 using Selenium;
-using Caelum.SelenuimDSL;
 
 namespace Caelum.SeleniumDSL
 {

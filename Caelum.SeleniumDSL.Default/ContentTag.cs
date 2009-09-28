@@ -4,7 +4,7 @@ using System.Text;
 using Selenium;
 using Caelum.SeleniumDSL;
 
-namespace Unit.Caelum.SeleniumDSL
+namespace Caelum.SeleniumDSL
 {
     internal class ContentTag : IContentTag
     {

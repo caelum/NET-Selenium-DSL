@@ -1,7 +1,5 @@
 ﻿using System;
-using Caelum.SelenuimDSL;
 using Selenium;
-using System.Threading;
 
 namespace Caelum.SeleniumDSL
 {

@@ -1,14 +1,15 @@
-﻿using Selenium;
-using TableSpace = Caelum.SeleniumDSL.Table;
-using Caelum.SeleniumDSL.Table.Layout;
+﻿using Caelum.SeleniumDSL.Default.Table.Layout;
 using Caelum.SeleniumDSL.Table;
+using Caelum.SeleniumDSL.Table.Layout;
+using Selenium;
+using TableSpace = Caelum.SeleniumDSL.Table;
 
-namespace Caelum.SeleniumDSL
+namespace Caelum.SeleniumDSL.Default
 {
     internal class Page : IPage
     {
-        private ISelenium selenium;
-        private long timeout;
+        private readonly ISelenium selenium;
+        private readonly long timeout;
 
         public Page(ISelenium selenium, long timeout)
         {
@@ -34,7 +35,7 @@ namespace Caelum.SeleniumDSL
         public ITable Table(string id)
         {
             ITableLayout layout = new FullTableLayout(selenium, id);
-            return new TableSpace::Table(selenium, layout, id);
+            return new Default.Table.Table(selenium, layout, id);
         }
 
         public IPage Navigate(string element)
@@ -46,7 +47,7 @@ namespace Caelum.SeleniumDSL
 
         public IPage NavigateLink(string text)
         {
-            return Navigate("link="+text);
+            return Navigate("link=" + text);
         }
 
         public IPage Click(string element)
@@ -120,6 +121,5 @@ namespace Caelum.SeleniumDSL
             selenium.DragAndDrop(source, destination);
             return this;
         }
-
     }
 }

@@ -1,16 +1,16 @@
-﻿using System.IO;
-using HttpServer.HttpModules;
-using HttpServer;
-using HttpServer.Sessions;
+﻿using System;
 using System.Collections.Generic;
-using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-namespace Integration.Caelum.SeleniumDSL
+using System.IO;
+using HttpServer;
+using HttpServer.HttpModules;
+using HttpServer.Sessions;
+
+namespace Caelum.SeleniumDSL.Default.Tests.Integration
 {
-    
     public class FileReaderModule : HttpModule
     {
         private List<string> ignoredPaths;
+
         public FileReaderModule()
         {
             ignoredPaths = new List<string>();
@@ -20,7 +20,7 @@ namespace Integration.Caelum.SeleniumDSL
 
         public override bool Process(IHttpRequest request, IHttpResponse response, IHttpSession session)
         {
-            if  (ignoredPaths.Contains(request.Uri.AbsolutePath))
+            if (ignoredPaths.Contains(request.Uri.AbsolutePath))
                 return true;
 
             TextWriter writer = new StreamWriter(response.Body);

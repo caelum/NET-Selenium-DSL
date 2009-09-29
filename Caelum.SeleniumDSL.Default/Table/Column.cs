@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Selenium;
+﻿using Caelum.SeleniumDSL.Table;
 
-namespace Caelum.SeleniumDSL.Table
+namespace Caelum.SeleniumDSL.Default.Table
 {
     internal class Column : IColumn
     {
@@ -40,6 +37,5 @@ namespace Caelum.SeleniumDSL.Table
                     return i;
             return -1;
         }
-
     }
 }

@@ -2,18 +2,18 @@
 {
     public interface ITableLayout
     {
-        string HeaderValue(int Column);
+        string HeaderValue(int column);
 
-        string HeaderLinkValue(int Column);
+        string HeaderLinkValue(int column);
 
         int GetContentCount();
 
-        string Value(int Row, int Column);
+        string Value(int row, int column);
 
         int GetColumnCount();
 
         int GetRowCount();
 
-        bool Contains(ITable Table, string Column, string Content);
+        bool Contains(ITable table, string column, string content);
     }
 }

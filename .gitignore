@@ -9,3 +9,4 @@ TestResults
 *.manifest
 *.csproj.user
 _ReSharper*
+*.resharper.user

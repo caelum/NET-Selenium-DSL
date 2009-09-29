@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region
+
 using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Selenium;
-using Caelum.SeleniumDSL;
 
-namespace Integration.Caelum.SeleniumDSL
+#endregion
+
+namespace Caelum.SeleniumDSL.Default.Tests.Integration
 {
     [TestClass]
-    public class IntegrationTest
+    public abstract class IntegrationTest
     {
         protected HttpServer.HttpServer server;
 
@@ -54,5 +53,4 @@ namespace Integration.Caelum.SeleniumDSL
             browser.Open("/fulltable.htm");
         }
     }
-
 }

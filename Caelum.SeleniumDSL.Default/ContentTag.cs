@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Selenium;
-using Caelum.SeleniumDSL;
+﻿using Selenium;
 
-namespace Caelum.SeleniumDSL
+namespace Caelum.SeleniumDSL.Default
 {
     internal class ContentTag : IContentTag
     {
-
-        private ISelenium selenium;
-        private string id;
+        private readonly ISelenium selenium;
+        private readonly string id;
 
         public ContentTag(ISelenium Selenium, string Id)
         {
@@ -32,6 +27,5 @@ namespace Caelum.SeleniumDSL
         {
             return selenium.GetText(id);
         }
-
     }
 }

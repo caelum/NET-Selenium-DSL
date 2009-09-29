@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Selenium;
-using Caelum.SeleniumDSL;
 using Caelum.SeleniumDSL.Search;
+using Caelum.SeleniumDSL.Table;
 using Caelum.SeleniumDSL.Table.Layout;
+using Selenium;
 
-namespace Caelum.SeleniumDSL.Table
+namespace Caelum.SeleniumDSL.Default.Table
 {
     internal class Table : ITable
     {
         private ISelenium selenium;
-        private ITableLayout layout;
+        private readonly ITableLayout layout;
         private string id;
 
         public Table(ISelenium selenium, ITableLayout layout, string id)
@@ -95,6 +93,5 @@ namespace Caelum.SeleniumDSL.Table
         {
             throw new NotImplementedException();
         }
-
     }
 }

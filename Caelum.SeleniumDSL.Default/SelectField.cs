@@ -1,7 +1,6 @@
-﻿using System;
-using Selenium;
+﻿using Selenium;
 
-namespace Caelum.SeleniumDSL
+namespace Caelum.SeleniumDSL.Default
 {
     internal class SelectField : ISelectField
     {
@@ -48,6 +47,5 @@ namespace Caelum.SeleniumDSL
         {
             selenium.FireEvent(id, "blur");
         }
-
     }
 }

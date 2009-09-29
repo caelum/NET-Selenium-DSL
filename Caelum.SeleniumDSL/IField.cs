@@ -2,9 +2,9 @@
 {
     public interface IField
     {
-        IForm Type(string Content);
+        IForm Type(string content);
 
-        bool Contains(string Content);
+        bool Contains(string content);
 
         string Content();
 

@@ -1,19 +1,15 @@
-﻿using System;
-using HttpServer;
-using HttpServer.HttpModules;
-using HttpServer.Sessions;
+﻿#region
+
+using Caelum.SeleniumDSL.Default.Tests.Integration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
-using System.Net;
-using Caelum.SeleniumDSL;
-using Selenium;
+
+#endregion
 
 namespace Integration.Caelum.SeleniumDSL
 {
     [TestClass]
     public class ContentTagTest : IntegrationTest
     {
-
         [TestMethod]
         public void TestExists()
         {

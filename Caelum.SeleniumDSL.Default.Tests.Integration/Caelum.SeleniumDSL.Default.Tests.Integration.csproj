@@ -113,6 +113,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Caelum.SeleniumDSL.Default\Caelum.SeleniumDSL.Default.csproj">
+      <Project>{42317374-060E-4020-8F89-9C8B22206EF8}</Project>
+      <Name>Caelum.SeleniumDSL.Default</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Caelum.SeleniumDSL\Caelum.SeleniumDSL.csproj">
       <Project>{702A2955-1922-4538-B5EA-4749552F2DFE}</Project>
       <Name>Caelum.SeleniumDSL</Name>

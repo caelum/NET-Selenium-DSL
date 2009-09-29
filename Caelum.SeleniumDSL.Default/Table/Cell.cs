@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using Caelum.SeleniumDSL.Table;
 using Selenium;
 
-namespace Caelum.SeleniumDSL.Table
+namespace Caelum.SeleniumDSL.Default.Table
 {
     internal class Cell : ICell
     {
@@ -59,6 +58,5 @@ namespace Caelum.SeleniumDSL.Table
         {
             throw new NotImplementedException();
         }
-
     }
 }

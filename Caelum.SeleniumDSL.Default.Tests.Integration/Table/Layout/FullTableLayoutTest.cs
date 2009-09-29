@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Caelum.SelenuimDSL;
-using Caelum.SeleniumDSL;
+﻿#region
 
-namespace Integration.Caelum.SeleniumDSL
+using Caelum.SeleniumDSL.Table;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+#endregion
+
+namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
 {
     [TestClass]
     public class FullTableLayoutTest : IntegrationTest
@@ -16,7 +15,7 @@ namespace Integration.Caelum.SeleniumDSL
         {
             openFullTable();
 
-            new FullTableLayout();
+            //new FullTableLayout();
             IPage page = browser.CurrentPage();
             ITable table = page.Table("oneTable");
 
@@ -78,6 +77,5 @@ namespace Integration.Caelum.SeleniumDSL
 
             Assert.AreEqual(2, table.Column("Header 1").Find("Row 2 - Cell 1"));
         }
-
     }
 }

@@ -1,13 +1,12 @@
-﻿using Caelum.SeleniumDSL;
-using Selenium;
+﻿using Selenium;
 
-namespace Caelum.SeleniumDSL
+namespace Caelum.SeleniumDSL.Default
 {
     internal class Field : IField
     {
-        private ISelenium selenium;
-        private IForm form;
-        private string id;
+        private readonly ISelenium selenium;
+        private readonly IForm form;
+        private readonly string id;
 
         public Field(ISelenium Selenium, IForm Form, string Id)
         {

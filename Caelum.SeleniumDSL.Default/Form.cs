@@ -1,13 +1,12 @@
-﻿using System;
-using Selenium;
+﻿using Selenium;
 
-namespace Caelum.SeleniumDSL
+namespace Caelum.SeleniumDSL.Default
 {
     internal class Form : IForm
     {
-        private ISelenium selenium;
-        private long timeout;
-        private string id;
+        private readonly ISelenium selenium;
+        private readonly long timeout;
+        private readonly string id;
 
         public Form(ISelenium selenium, long timeout, string id)
         {
@@ -59,6 +58,5 @@ namespace Caelum.SeleniumDSL
             selenium.Submit(this.id);
             selenium.WaitForPageToLoad(timeout.ToString());
         }
-
     }
 }

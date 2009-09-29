@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Caelum.SelenuimDSL;
-using Caelum.SeleniumDSL;
+﻿#region
 
-namespace Integration.Caelum.SeleniumDSL
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+#endregion
+
+namespace Caelum.SeleniumDSL.Default.Tests.Integration
 {
     [TestClass]
     public class FieldTest : IntegrationTest
@@ -38,7 +36,7 @@ namespace Integration.Caelum.SeleniumDSL
         {
             openEvents();
             IField field = browser.CurrentPage().Form("oneForm").Field("changeInput");
-            
+
             field.Type("Some text");
 
             Assert.IsTrue(field.Contains("text"));

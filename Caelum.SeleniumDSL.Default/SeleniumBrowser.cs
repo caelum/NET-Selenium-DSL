@@ -1,7 +1,7 @@
 ﻿using System;
 using Selenium;
 
-namespace Caelum.SeleniumDSL
+namespace Caelum.SeleniumDSL.Default
 {
     public class SeleniumBrowser : IBrowser<ISelenium>
     {
@@ -47,6 +47,5 @@ namespace Caelum.SeleniumDSL
         {
             throw new NotImplementedException();
         }
-
     }
 }

@@ -1,12 +1,14 @@
 ﻿using System;
+using Caelum.SeleniumDSL.Table;
+using Caelum.SeleniumDSL.Table.Layout;
 using Selenium;
 
-namespace Caelum.SeleniumDSL.Table.Layout
+namespace Caelum.SeleniumDSL.Default.Table.Layout
 {
     internal class FullTableLayout : ITableLayout
     {
-        private ISelenium selenium;
-        private string xPath;
+        private readonly ISelenium selenium;
+        private readonly string xPath;
 
         public FullTableLayout(ISelenium selenium, string id)
         {
@@ -19,14 +21,14 @@ namespace Caelum.SeleniumDSL.Table.Layout
             return this.selenium.GetText(this.xPath + string.Format("/thead/tr[1]/th[{0}]", column));
         }
 
-        public string HeaderLinkValue(int Column)
+        public string HeaderLinkValue(int column)
         {
             throw new NotImplementedException();
         }
 
         public int GetContentCount()
         {
-            return (int)selenium.GetXpathCount(this.xPath + "/tbody/tr");
+            return (int) selenium.GetXpathCount(this.xPath + "/tbody/tr");
         }
 
         public string Value(int row, int column)
@@ -36,12 +38,12 @@ namespace Caelum.SeleniumDSL.Table.Layout
 
         public int GetColumnCount()
         {
-            return (int)selenium.GetXpathCount(this.xPath + "/thead/tr/th");
+            return (int) selenium.GetXpathCount(this.xPath + "/thead/tr/th");
         }
 
         public int GetRowCount()
         {
-            return (int)selenium.GetXpathCount(this.xPath + "/*/tr");
+            return (int) selenium.GetXpathCount(this.xPath + "/*/tr");
         }
 
         public bool Contains(ITable table, string column, string content)

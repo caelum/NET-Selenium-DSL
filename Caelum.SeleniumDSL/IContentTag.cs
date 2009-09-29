@@ -2,7 +2,7 @@
 {
     public interface IContentTag
     {
-        bool Contains(string Content);
+        bool Contains(string content);
 
         bool Exists();
 

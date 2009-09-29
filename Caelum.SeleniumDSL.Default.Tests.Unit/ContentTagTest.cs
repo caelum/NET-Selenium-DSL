@@ -1,8 +1,6 @@
-﻿using Caelum.SeleniumDSL;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Unit.Caelum.SeleniumDSL;
+using Caelum.SeleniumDSL;
 
 namespace Unit.Caelum.SeleniumDSL
 {

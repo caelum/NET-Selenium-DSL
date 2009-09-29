@@ -1,11 +1,6 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Caelum.SeleniumDSL;
+using System.Linq;
 
 namespace Unit.Caelum.SeleniumDSL
 {

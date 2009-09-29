@@ -1,10 +1,6 @@
-﻿#region
-
-using System.Net;
+﻿using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Selenium;
-
-#endregion
 
 namespace Caelum.SeleniumDSL.Default.Tests.Integration
 {

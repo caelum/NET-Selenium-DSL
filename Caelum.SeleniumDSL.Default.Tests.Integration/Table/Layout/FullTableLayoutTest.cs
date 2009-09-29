@@ -1,9 +1,5 @@
-﻿#region
-
-using Caelum.SeleniumDSL.Table;
+﻿using Caelum.SeleniumDSL.Table;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-#endregion
 
 namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
 {

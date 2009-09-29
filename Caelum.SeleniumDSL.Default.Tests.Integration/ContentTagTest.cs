@@ -1,11 +1,6 @@
-﻿#region
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using Caelum.SeleniumDSL.Default.Tests.Integration;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-#endregion
-
-namespace Integration.Caelum.SeleniumDSL
+namespace Caelum.SeleniumDSL.Default.Tests.Integration
 {
     [TestClass]
     public class ContentTagTest : IntegrationTest

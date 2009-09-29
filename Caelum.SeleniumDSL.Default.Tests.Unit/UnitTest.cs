@@ -1,8 +1,8 @@
-﻿using Moq;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using Selenium;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Unit.Caelum.SeleniumDSL
+namespace Caelum.SeleniumDSL.Default.Tests.Unit
 {
     public class UnitTest
     {

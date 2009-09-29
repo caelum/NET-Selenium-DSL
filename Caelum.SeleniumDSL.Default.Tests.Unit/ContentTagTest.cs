@@ -1,21 +1,19 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Caelum.SeleniumDSL;
 
-namespace Unit.Caelum.SeleniumDSL
+namespace Caelum.SeleniumDSL.Default.Tests.Unit
 {
     [TestClass]
     public class ContentTagTest : UnitTest
     {
-        
         [TestMethod]
         public void TestContains()
         {
             selenium.Setup(o => o.GetText(It.IsAny<string>()))
                 .Returns("Some text");
 
-            ContentTag tag = new ContentTag(selenium.Object, "someId");
-            
+            var tag = new ContentTag(selenium.Object, "someId");
+
             Assert.IsTrue(tag.Contains("text"));
         }
 
@@ -25,7 +23,7 @@ namespace Unit.Caelum.SeleniumDSL
             selenium.Setup(o => o.IsElementPresent("someId"))
                 .Returns(true);
 
-            ContentTag tag = new ContentTag(selenium.Object, "someId");
+            var tag = new ContentTag(selenium.Object, "someId");
 
             Assert.IsTrue(tag.Exists());
         }
@@ -36,10 +34,9 @@ namespace Unit.Caelum.SeleniumDSL
             selenium.Setup(o => o.GetText("someId"))
                 .Returns("Some text");
 
-            ContentTag tag = new ContentTag(selenium.Object, "someId");
+            var tag = new ContentTag(selenium.Object, "someId");
 
             Assert.AreEqual("Some text", tag.InnerHTML());
         }
-
     }
 }

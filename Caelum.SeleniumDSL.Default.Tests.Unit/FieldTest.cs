@@ -1,8 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Caelum.SeleniumDSL;
-using System.Linq;
 
-namespace Unit.Caelum.SeleniumDSL
+namespace Caelum.SeleniumDSL.Default.Tests.Unit
 {
     [TestClass]
     public class FieldTest : UnitTest
@@ -28,8 +26,8 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.GetValue("someId"))
                 .Returns("Some text");
-            
-            Field field = new Field(selenium.Object, null, "someId");
+
+            var field = new Field(selenium.Object, null, "someId");
 
             Assert.IsTrue(field.Contains("text"));
         }
@@ -40,7 +38,7 @@ namespace Unit.Caelum.SeleniumDSL
             selenium.Setup(o => o.GetValue("someId"))
                 .Returns("Some text");
 
-            Field field = new Field(selenium.Object, null, "someId");
+            var field = new Field(selenium.Object, null, "someId");
 
             Assert.AreEqual("Some text", field.Content());
         }
@@ -50,10 +48,9 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.Type("someId", "Some text"));
 
-            Field field = new Field(selenium.Object, null, "someId");
+            var field = new Field(selenium.Object, null, "someId");
 
             field.Type("Some text");
         }
-
     }
 }

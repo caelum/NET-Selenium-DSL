@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Caelum.SeleniumDSL;
 
-namespace Unit.Caelum.SeleniumDSL
+namespace Caelum.SeleniumDSL.Default.Tests.Unit
 {
     [TestClass]
     public class PageTest : UnitTest
@@ -11,7 +10,7 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.Click("someElement"));
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.Click("someElement");
         }
@@ -21,7 +20,7 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.Click("link=someElement"));
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.ClickLink("someElement");
         }
@@ -31,7 +30,7 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.DoubleClick("someElement"));
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.DoubleClick("someElement");
         }
@@ -41,7 +40,7 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.DragAndDrop("from", "to"));
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.DragAndDrop("from", "to");
         }
@@ -51,7 +50,7 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.IsTextPresent("someLink"));
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.HasLink("someLink");
         }
@@ -61,7 +60,7 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.GetEval("this.browserbot.getCurrentWindow().someFunction()"));
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.Invoke("someFunction()");
         }
@@ -71,7 +70,7 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.MouseDown("someElement"));
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.MouseDown("someElement");
         }
@@ -81,7 +80,7 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.MouseUp("someElement"));
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.MouseUp("someElement");
         }
@@ -92,7 +91,7 @@ namespace Unit.Caelum.SeleniumDSL
             selenium.Setup(o => o.Click("someLink"));
             selenium.Setup(o => o.WaitForPageToLoad("10000"));
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.Navigate("someLink");
         }
@@ -103,7 +102,7 @@ namespace Unit.Caelum.SeleniumDSL
             selenium.Setup(o => o.Click("link=someLink"));
             selenium.Setup(o => o.WaitForPageToLoad("10000"));
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.NavigateLink("someLink");
         }
@@ -113,7 +112,7 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.Refresh());
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.Refresh();
         }
@@ -123,7 +122,7 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.CaptureScreenshot("someFilePath"));
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.Screenshot("someFilePath");
         }
@@ -133,7 +132,7 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.GetTitle());
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.Title();
         }
@@ -143,7 +142,7 @@ namespace Unit.Caelum.SeleniumDSL
         {
             selenium.Setup(o => o.WaitForCondition("this.browserbot.getCurrentWindow().prop === true", "3000"));
 
-            Page page = new Page(selenium.Object, 10000);
+            var page = new Page(selenium.Object, 10000);
 
             page.WaitUntil("prop === true", 3000);
         }

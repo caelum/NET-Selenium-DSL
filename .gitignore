@@ -8,3 +8,4 @@ TestResults
 *.deploy
 *.manifest
 *.csproj.user
+_ReSharper*

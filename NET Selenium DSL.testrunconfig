@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<TestRunConfiguration name="IntegrationTests" id="42a076db-298e-4055-beb2-877cabce6610" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
-  <Description>This is a default test run configuration for a local test run.</Description>
-  <Deployment>
-    <DeploymentItem filename="Integration Tests\resources\" outputDirectory="resources"/>
-  </Deployment>
-  <TestTypeSpecific />
-</TestRunConfiguration>

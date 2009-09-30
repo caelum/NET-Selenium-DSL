@@ -1,5 +1,4 @@
-﻿using System;
-using Caelum.SeleniumDSL.Table;
+﻿using Caelum.SeleniumDSL.Table;
 using Caelum.SeleniumDSL.Table.Layout;
 using Selenium;
 
@@ -23,7 +22,7 @@ namespace Caelum.SeleniumDSL.Default.Table.Layout
 
         public string HeaderLinkValue(int column)
         {
-            throw new NotImplementedException();
+            return this.selenium.GetText(this.xPath + string.Format("/thead/tr[1]/th[{0}]/a/text()", column));
         }
 
         public int GetContentCount()
@@ -46,7 +45,7 @@ namespace Caelum.SeleniumDSL.Default.Table.Layout
             return (int) selenium.GetXpathCount(this.xPath + "/*/tr");
         }
 
-        public bool Contains(ITable table, string column, string content)
+        public internal bool Contains(ITable table, string column, string content)
         {
             for (int i = 1; i < GetRowCount(); i++)
             {

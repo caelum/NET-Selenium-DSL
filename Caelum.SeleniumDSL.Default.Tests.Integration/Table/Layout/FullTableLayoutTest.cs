@@ -1,4 +1,5 @@
-﻿using Caelum.SeleniumDSL.Table;
+﻿using Caelum.SeleniumDSL.Default.Table.Layout;
+using Caelum.SeleniumDSL.Table;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
@@ -6,72 +7,77 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
     [TestClass]
     public class FullTableLayoutTest : IntegrationTest
     {
+        private FullTableLayout tableLayout;
+
+        [TestInitialize]
+        public override void SetUp()
+        {
+            base.SetUp();
+            openFullTable();
+            tableLayout = new FullTableLayout(selenium, "oneTable");
+        }
+
         [TestMethod]
         public void ReturnsCorrectCountOfRows()
         {
-            openFullTable();
-
-            //new FullTableLayout();
-            IPage page = browser.CurrentPage();
-            ITable table = page.Table("oneTable");
-
-            Assert.AreEqual(3, table.GetRowCount());
+            Assert.AreEqual(3, tableLayout.GetRowCount());
         }
 
         [TestMethod]
         public void ReturnsCorrectCountOfColumns()
         {
-            openFullTable();
+            Assert.AreEqual(3, tableLayout.GetColumnCount());
+        }
 
-            IPage page = browser.CurrentPage();
-            ITable table = page.Table("oneTable");
+        //[TestMethod]
+        //public void ReturnsCorrectLocationOfColumn()
+        //{
+        //    Assert.AreEqual(2, table.FindColumn("Header 2"));
+        //}
 
-            Assert.AreEqual(3, table.GetColumnCount());
+        [TestMethod]
+        public void ReturnsCorrectCountOfContents()
+        {
+            Assert.AreEqual(2, tableLayout.GetContentCount());
         }
 
         [TestMethod]
-        public void ReturnsCorrectLocationOfColumn()
+        public void ReturnsLinkFromHeader()
         {
-            openFullTable();
-
-            IPage page = browser.CurrentPage();
-            ITable table = page.Table("oneTable");
-
-            Assert.AreEqual(2, table.FindColumn("Header 2"));
+            Assert.AreEqual("Header 3", tableLayout.HeaderLinkValue(3));
         }
 
         [TestMethod]
-        public void ReturnsCorrectCountOfItems()
+        public void ReturnsContentFromHeader()
         {
-            openFullTable();
-
-            IPage page = browser.CurrentPage();
-            ITable table = page.Table("oneTable");
-
-            Assert.AreEqual(2, table.GetContentCount());
+            Assert.AreEqual("Header 2", tableLayout.HeaderValue(2));
         }
+
+        //[TestMethod]
+        //public void ReturnCorrectValuesOfCell()
+        //{
+        //    IPage page = browser.CurrentPage();
+        //    ITable table = page.Table("oneTable");
+
+        //    Assert.AreEqual("Row 1 - Cell 1", table.Cell(1, 1));
+        //    Assert.AreEqual("Row 2 - Cell 2", table.Cell(2, "Header 2"));
+        //}
+
+        //[TestMethod]
+        //public void ReturnCorrectRowNumberFromColumnSearch()
+        //{
+        //    IPage page = browser.CurrentPage();
+        //    ITable table = page.Table("oneTable");
+
+        //    Assert.AreEqual(2, table.Column("Header 1").Find("Row 2 - Cell 1"));
+        //}
 
         [TestMethod]
-        public void ReturnCorrectValuesOfCell()
+        public void ReturnCorrectValueOfCellAtGivenRow()
         {
-            openFullTable();
-
-            IPage page = browser.CurrentPage();
-            ITable table = page.Table("oneTable");
-
-            Assert.AreEqual("Row 1 - Cell 1", table.Cell(1, 1));
-            Assert.AreEqual("Row 2 - Cell 2", table.Cell(2, "Header 2"));
+            Assert.AreEqual("Row 1 - Cell 2", tableLayout.Value(1, 2));
         }
 
-        [TestMethod]
-        public void ReturnCorrectRowNumberFromColumnSearch()
-        {
-            openFullTable();
-
-            IPage page = browser.CurrentPage();
-            ITable table = page.Table("oneTable");
-
-            Assert.AreEqual(2, table.Column("Header 1").Find("Row 2 - Cell 1"));
-        }
     }
+
 }

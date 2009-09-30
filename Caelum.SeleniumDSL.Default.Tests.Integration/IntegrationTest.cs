@@ -14,7 +14,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
         protected IBrowser<ISelenium> browser;
 
         [TestInitialize]
-        public void SetUp()
+        public virtual void SetUp()
         {
             server = new HttpServer.HttpServer();
             server.Add(new FileReaderModule());

@@ -47,6 +47,7 @@
     <Compile Include="SeleniumBrowser.cs" />
     <Compile Include="Table\Cell.cs" />
     <Compile Include="Table\Column.cs" />
+    <Compile Include="Table\Layout\PlainTableLayout.cs" />
     <Compile Include="Table\Layout\FullTableLayout.cs" />
     <Compile Include="Table\Table.cs" />
   </ItemGroup>

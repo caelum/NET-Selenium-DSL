@@ -4,16 +4,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
 {
     [TestClass]
-    public class FullTableLayoutTest : IntegrationTest
+    public class PlainTableLayoutTest : IntegrationTest
     {
-        private FullTableLayout tableLayout;
+        private PlainTableLayout tableLayout;
 
         [TestInitialize]
         public override void SetUp()
         {
             base.SetUp();
-            openFullTable();
-            tableLayout = new FullTableLayout(selenium, "oneTable");
+            openPlainTable();
+            tableLayout = new PlainTableLayout(selenium, "oneTable");
         }
 
         [TestMethod]

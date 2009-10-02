@@ -81,11 +81,13 @@
     <Compile Include="FieldTest.cs" />
     <Compile Include="FileReaderModule.cs" />
     <Compile Include="ContentTagTest.cs" />
+    <Compile Include="Table\Layout\PlainTableLayoutTest.cs" />
     <Compile Include="Table\Layout\FullTableLayoutTest.cs" />
     <Compile Include="IntegrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="resources\plaintable.htm" />
     <Content Include="resources\events.htm" />
     <Content Include="resources\fulltable.htm" />
     <Content Include="resources\index.htm" />

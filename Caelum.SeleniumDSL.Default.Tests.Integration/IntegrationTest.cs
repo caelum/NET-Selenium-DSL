@@ -48,5 +48,10 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
         {
             browser.Open("/fulltable.htm");
         }
+
+        public void openPlainTable()
+        {
+            browser.Open("/plaintable.htm");
+        }
     }
 }

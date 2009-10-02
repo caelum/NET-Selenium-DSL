@@ -10,3 +10,4 @@ TestResults
 *.csproj.user
 _ReSharper*
 *.resharper.user
+*.vsmdi

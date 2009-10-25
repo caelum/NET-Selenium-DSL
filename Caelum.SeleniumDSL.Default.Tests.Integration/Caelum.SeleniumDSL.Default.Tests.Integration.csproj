@@ -81,7 +81,6 @@
     <Compile Include="FieldTest.cs" />
     <Compile Include="FileReaderModule.cs" />
     <Compile Include="ContentTagTest.cs" />
-    <Compile Include="Table\Class1.cs" />
     <Compile Include="Table\Layout\PlainTablePlusThLayoutTest.cs" />
     <Compile Include="Table\Layout\PlainTableLayoutTest.cs" />
     <Compile Include="Table\Layout\FullTableLayoutTest.cs" />
@@ -89,11 +88,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="resources\plaintableplusth.htm" />
-    <Content Include="resources\plaintable.htm" />
-    <Content Include="resources\events.htm" />
-    <Content Include="resources\fulltable.htm" />
-    <Content Include="resources\index.htm" />
+    <Content Include="resources\plaintableplusth.html" />
+    <Content Include="resources\plaintable.html" />
+    <Content Include="resources\events.html" />
+    <Content Include="resources\fulltable.html" />
+    <Content Include="resources\index.html" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">

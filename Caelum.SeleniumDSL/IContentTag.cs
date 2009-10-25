@@ -6,6 +6,6 @@
 
         bool Exists();
 
-        string InnerHTML();
+        string InnerHtml();
     }
 }

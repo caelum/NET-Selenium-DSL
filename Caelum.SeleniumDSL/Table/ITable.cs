@@ -34,6 +34,8 @@ namespace Caelum.SeleniumDSL.Table
 
         IRowMatcher Select(IRowMatcher matcher);
 
+        bool Contains(ITable table, string column, string content);
+
         //ITableCriteria CreateCriteria();
 
         //ITableLayout GetLayout();

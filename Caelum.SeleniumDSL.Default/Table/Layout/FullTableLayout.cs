@@ -1,5 +1,4 @@
-﻿using Caelum.SeleniumDSL.Table;
-using Caelum.SeleniumDSL.Table.Layout;
+﻿using Caelum.SeleniumDSL.Table.Layout;
 using Selenium;
 
 namespace Caelum.SeleniumDSL.Default.Table.Layout
@@ -47,14 +46,5 @@ namespace Caelum.SeleniumDSL.Default.Table.Layout
             return (int) _selenium.GetXpathCount(_tableXPath + "/*/tr");
         }
 
-        public bool Contains(ITable table, string column, string content)
-        {
-            for (int i = 1; i < GetRowCount(); i++)
-            {
-                if (table.Cell(i, column).Contains(content))
-                    return true;
-            }
-            return false;
-        }
     }
 }

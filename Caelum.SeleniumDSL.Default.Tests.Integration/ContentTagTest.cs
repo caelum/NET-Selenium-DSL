@@ -8,22 +8,22 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
         [TestMethod]
         public void TestExists()
         {
-            openIndex();
-            Assert.IsTrue(browser.CurrentPage().Div("oneDiv").Exists());
+            OpenIndex();
+            Assert.IsTrue(Browser.CurrentPage().Div("oneDiv").Exists());
         }
 
         [TestMethod]
-        public void TestInnerHTML()
+        public void TestInnerHtml()
         {
-            openIndex();
-            Assert.AreEqual("Div content", browser.CurrentPage().Div("oneDiv").InnerHTML());
+            OpenIndex();
+            Assert.AreEqual("Div content", Browser.CurrentPage().Div("oneDiv").InnerHtml());
         }
 
         [TestMethod]
         public void TestContains()
         {
-            openIndex();
-            Assert.IsTrue(browser.CurrentPage().Div("oneDiv").Contains("content"));
+            OpenIndex();
+            Assert.IsTrue(Browser.CurrentPage().Div("oneDiv").Contains("content"));
         }
     }
 }

@@ -7,56 +7,56 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
     [TestClass]
     public abstract class IntegrationTest
     {
-        protected HttpServer.HttpServer server;
+        private HttpServer.HttpServer _server;
 
-        protected ISelenium selenium;
+        protected ISelenium Selenium;
 
-        protected IBrowser<ISelenium> browser;
+        protected IBrowser<ISelenium> Browser;
 
         [TestInitialize]
         public virtual void SetUp()
         {
-            server = new HttpServer.HttpServer();
-            server.Add(new FileReaderModule());
-            server.Start(IPAddress.Any, 9100);
+            _server = new HttpServer.HttpServer();
+            _server.Add(new FileReaderModule());
+            _server.Start(IPAddress.Any, 9100);
 
-            selenium = new DefaultSelenium("localhost", 4444, "*firefox", "http://localhost:9100");
-            selenium.Start();
-            selenium.SetContext("NET Selenium DSL Tests");
+            Selenium = new DefaultSelenium("localhost", 4444, "*firefox", "http://localhost:9100");
+            Selenium.Start();
+            Selenium.SetContext("NET Selenium DSL Tests");
 
-            browser = new SeleniumBrowser(selenium);
+            Browser = new SeleniumBrowser(Selenium);
         }
 
         [TestCleanup]
         public void TearDown()
         {
-            selenium.Stop();
-            server.Stop();
+            Selenium.Stop();
+            _server.Stop();
         }
 
-        public void openIndex()
+        public void OpenIndex()
         {
-            browser.Open("/index.html");
+            Browser.Open("/index.html");
         }
 
-        public void openEvents()
+        public void OpenEvents()
         {
-            browser.Open("/events.html");
+            Browser.Open("/events.html");
         }
 
-        public void openFullTable()
+        public void OpenFullTable()
         {
-            browser.Open("/fulltable.html");
+            Browser.Open("/fulltable.html");
         }
 
-        public void openPlainTable()
+        public void OpenPlainTable()
         {
-            browser.Open("/plaintable.html");
+            Browser.Open("/plaintable.html");
         }
 
-        public void openPlainTablePlusTh()
+        public void OpenPlainTablePlusTh()
         {
-            browser.Open("plaintableplusth.html");
+            Browser.Open("plaintableplusth.html");
         }
     }
 }

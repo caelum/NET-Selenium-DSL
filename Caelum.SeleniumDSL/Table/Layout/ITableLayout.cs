@@ -14,6 +14,6 @@
 
         int GetRowCount();
 
-        bool Contains(ITable table, string column, string content);
+        
     }
 }

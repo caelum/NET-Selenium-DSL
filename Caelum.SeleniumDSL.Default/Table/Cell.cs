@@ -6,17 +6,17 @@ namespace Caelum.SeleniumDSL.Default.Table
 {
     internal class Cell : ICell
     {
-        private ISelenium selenium;
-        private ITable table;
-        private int row;
-        private int column;
+        private ISelenium _selenium;
+        private ITable _table;
+        private int _row;
+        private int _column;
 
         public Cell(ISelenium selenium, ITable table, int row, int column)
         {
-            this.selenium = selenium;
-            this.table = table;
-            this.row = row;
-            this.column = column;
+            _selenium = selenium;
+            _table = table;
+            _row = row;
+            _column = column;
         }
 
         public string Value()

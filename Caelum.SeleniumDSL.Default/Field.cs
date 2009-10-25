@@ -4,41 +4,41 @@ namespace Caelum.SeleniumDSL.Default
 {
     internal class Field : IField
     {
-        private readonly ISelenium selenium;
-        private readonly IForm form;
-        private readonly string id;
+        private readonly ISelenium _selenium;
+        private readonly IForm _form;
+        private readonly string _id;
 
-        public Field(ISelenium Selenium, IForm Form, string Id)
+        public Field(ISelenium selenium, IForm form, string id)
         {
-            this.selenium = Selenium;
-            this.form = Form;
-            this.id = Id;
+            _selenium = selenium;
+            _form = form;
+            _id = id;
         }
 
-        public IForm Type(string Content)
+        public IForm Type(string content)
         {
-            selenium.Type(id, Content);
-            return form;
+            _selenium.Type(_id, content);
+            return _form;
         }
 
-        public bool Contains(string Content)
+        public bool Contains(string content)
         {
-            return selenium.GetValue(id).Contains(Content);
+            return _selenium.GetValue(_id).Contains(content);
         }
 
         public string Content()
         {
-            return selenium.GetValue(id);
+            return _selenium.GetValue(_id);
         }
 
         public void Blur()
         {
-            selenium.FireEvent(id, "blur");
+            _selenium.FireEvent(_id, "blur");
         }
 
         public void Change()
         {
-            selenium.FireEvent(id, "change");
+            _selenium.FireEvent(_id, "change");
         }
     }
 }

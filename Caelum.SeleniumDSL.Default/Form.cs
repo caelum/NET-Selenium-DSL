@@ -4,59 +4,59 @@ namespace Caelum.SeleniumDSL.Default
 {
     internal class Form : IForm
     {
-        private readonly ISelenium selenium;
-        private readonly long timeout;
-        private readonly string id;
+        private readonly ISelenium _selenium;
+        private readonly long _timeout;
+        private readonly string _id;
 
         public Form(ISelenium selenium, long timeout, string id)
         {
-            this.selenium = selenium;
-            this.timeout = timeout;
-            this.id = id;
+            _selenium = selenium;
+            _timeout = timeout;
+            _id = id;
         }
 
         public IField Field(string field)
         {
-            return new Field(selenium, this, field);
+            return new Field(_selenium, this, field);
         }
 
         public void Click(string element)
         {
-            selenium.Click(element);
+            _selenium.Click(element);
         }
 
         public void Navigate(string element)
         {
-            selenium.Click(element);
-            selenium.WaitForPageToLoad(timeout.ToString());
+            _selenium.Click(element);
+            _selenium.WaitForPageToLoad(_timeout.ToString());
         }
 
         public ISelectField Select(string selectField)
         {
-            return new SelectField(selenium, this, selectField);
+            return new SelectField(_selenium, this, selectField);
         }
 
         public IForm Check(string checkbox)
         {
-            selenium.Check(checkbox);
+            _selenium.Check(checkbox);
             return this;
         }
 
         public IForm Uncheck(string checkbox)
         {
-            selenium.Uncheck(checkbox);
+            _selenium.Uncheck(checkbox);
             return this;
         }
 
         public bool IsChecked(string checkbox)
         {
-            return selenium.IsChecked(checkbox);
+            return _selenium.IsChecked(checkbox);
         }
 
         public void Submit()
         {
-            selenium.Submit(this.id);
-            selenium.WaitForPageToLoad(timeout.ToString());
+            _selenium.Submit(_id);
+            _selenium.WaitForPageToLoad(_timeout.ToString());
         }
     }
 }

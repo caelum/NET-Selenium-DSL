@@ -1,61 +1,50 @@
-﻿using Caelum.SeleniumDSL.Table;
-using Caelum.SeleniumDSL.Table.Layout;
+﻿using Caelum.SeleniumDSL.Table.Layout;
 using Selenium;
 
 namespace Caelum.SeleniumDSL.Default.Table.Layout
 {
     internal class PlainTableLayout : ITableLayout
     {
-        private readonly ISelenium selenium;
-        private readonly string tableXPath;
-        private readonly string headerXPath;
+        private readonly ISelenium _selenium;
+        private readonly string _tableXPath;
+        private readonly string _headerXPath;
 
         public PlainTableLayout(ISelenium selenium, string id)
         {
-            this.selenium = selenium;
-            this.tableXPath = string.Format("//table[@id='{0}']/tbody", id);
-            this.headerXPath = tableXPath + "/tr[1]";
+            _selenium = selenium;
+            _tableXPath = string.Format("//table[@id='{0}']/tbody", id);
+            _headerXPath = _tableXPath + "/tr[1]";
         }
 
         public string HeaderValue(int column)
         {
-            return this.selenium.GetText(this.headerXPath + string.Format("/td[{0}]", column));
+            return _selenium.GetText(_headerXPath + string.Format("/td[{0}]", column));
         }
 
         public string HeaderLinkValue(int column)
         {
-            return this.selenium.GetText(this.headerXPath + string.Format("/td[{0}]/a/text()", column));
+            return _selenium.GetText(_headerXPath + string.Format("/td[{0}]/a/text()", column));
         }
 
         public int GetContentCount()
         {
-            return (int) selenium.GetXpathCount(this.tableXPath + "/tr") - 1;
+            return (int) _selenium.GetXpathCount(_tableXPath + "/tr") - 1;
         }
 
         public string Value(int row, int column)
         {
-            row += 1;
-            return this.selenium.GetText(this.tableXPath + string.Format("/tr[{0}]/td[{1}]", row, column));
+            return _selenium.GetText(_tableXPath + string.Format("/tr[{0}]/td[{1}]", row+1, column));
         }
 
         public int GetColumnCount()
         {
-            return (int) selenium.GetXpathCount(this.tableXPath + "/tr[1]/td");
+            return (int) _selenium.GetXpathCount(_tableXPath + "/tr[1]/td");
         }
 
         public int GetRowCount()
         {
-            return (int) selenium.GetXpathCount(this.tableXPath + "/tr");
+            return (int) _selenium.GetXpathCount(_tableXPath + "/tr");
         }
 
-        public bool Contains(ITable table, string column, string content)
-        {
-            for (int i = 1; i < GetRowCount(); i++)
-            {
-                if (table.Cell(i, column).Contains(content))
-                    return true;
-            }
-            return false;
-        }
     }
 }

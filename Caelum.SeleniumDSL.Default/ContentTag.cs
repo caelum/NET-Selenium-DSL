@@ -4,28 +4,28 @@ namespace Caelum.SeleniumDSL.Default
 {
     internal class ContentTag : IContentTag
     {
-        private readonly ISelenium selenium;
-        private readonly string id;
+        private readonly ISelenium _selenium;
+        private readonly string _id;
 
-        public ContentTag(ISelenium Selenium, string Id)
+        public ContentTag(ISelenium selenium, string id)
         {
-            this.selenium = Selenium;
-            this.id = Id;
+            _selenium = selenium;
+            _id = id;
         }
 
-        public bool Contains(string Content)
+        public bool Contains(string content)
         {
-            return selenium.GetText(id).Contains(Content);
+            return _selenium.GetText(_id).Contains(content);
         }
 
         public bool Exists()
         {
-            return selenium.IsElementPresent(id);
+            return _selenium.IsElementPresent(_id);
         }
 
-        public string InnerHTML()
+        public string InnerHtml()
         {
-            return selenium.GetText(id);
+            return _selenium.GetText(_id);
         }
     }
 }

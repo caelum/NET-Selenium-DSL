@@ -8,15 +8,15 @@ namespace Caelum.SeleniumDSL.Default.Table
 {
     internal class Table : ITable
     {
-        private ISelenium selenium;
-        private readonly ITableLayout layout;
-        private string id;
+        private ISelenium _selenium;
+        private readonly ITableLayout _layout;
+        private string _id;
 
         public Table(ISelenium selenium, ITableLayout layout, string id)
         {
-            this.selenium = selenium;
-            this.layout = layout;
-            this.id = id;
+            _selenium = selenium;
+            _layout = layout;
+            _id = id;
         }
 
         public new string GetType()
@@ -36,17 +36,17 @@ namespace Caelum.SeleniumDSL.Default.Table
 
         public int GetColumnCount()
         {
-            return layout.GetColumnCount();
+            return _layout.GetColumnCount();
         }
 
         public int GetRowCount()
         {
-            return layout.GetRowCount();
+            return _layout.GetRowCount();
         }
 
         public int GetContentCount()
         {
-            return layout.GetContentCount();
+            return _layout.GetContentCount();
         }
 
         public IRow Header()
@@ -90,6 +90,11 @@ namespace Caelum.SeleniumDSL.Default.Table
         }
 
         public IRowMatcher Select(IRowMatcher matcher)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Contains(ITable table, string column, string content)
         {
             throw new NotImplementedException();
         }

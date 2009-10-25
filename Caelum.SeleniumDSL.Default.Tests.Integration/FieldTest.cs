@@ -8,8 +8,8 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
         [TestMethod]
         public void TestBlur()
         {
-            openEvents();
-            IPage page = browser.CurrentPage();
+            OpenEvents();
+            IPage page = Browser.CurrentPage();
 
             page.Form("oneForm").Field("blurInput").Blur();
 
@@ -19,8 +19,8 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
         [TestMethod]
         public void TestChange()
         {
-            openEvents();
-            IPage page = browser.CurrentPage();
+            OpenEvents();
+            IPage page = Browser.CurrentPage();
 
             page.Form("oneForm").Field("changeInput").Change();
 
@@ -30,8 +30,8 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
         [TestMethod]
         public void TestThatTypeValueInsideField()
         {
-            openEvents();
-            IField field = browser.CurrentPage().Form("oneForm").Field("changeInput");
+            OpenEvents();
+            IField field = Browser.CurrentPage().Form("oneForm").Field("changeInput");
 
             field.Type("Some text");
 

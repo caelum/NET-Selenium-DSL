@@ -6,75 +6,50 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
     [TestClass]
     public class PlainTablePlusThLayoutTest : IntegrationTest
     {
-        private PlainTablePlusThLayout tableLayout;
+        private PlainTablePlusThLayout _tableLayout;
 
         [TestInitialize]
         public override void SetUp()
         {
             base.SetUp();
-            openPlainTablePlusTh();
-            tableLayout = new PlainTablePlusThLayout(selenium, "oneTable");
+            OpenPlainTablePlusTh();
+            _tableLayout = new PlainTablePlusThLayout(Selenium, "oneTable");
         }
 
         [TestMethod]
         public void ReturnsCorrectCountOfRows()
         {
-            Assert.AreEqual(3, tableLayout.GetRowCount());
+            Assert.AreEqual(3, _tableLayout.GetRowCount());
         }
 
         [TestMethod]
         public void ReturnsCorrectCountOfColumns()
         {
-            Assert.AreEqual(3, tableLayout.GetColumnCount());
+            Assert.AreEqual(3, _tableLayout.GetColumnCount());
         }
-
-        //[TestMethod]
-        //public void ReturnsCorrectLocationOfColumn()
-        //{
-        //    Assert.AreEqual(2, table.FindColumn("Header 2"));
-        //}
 
         [TestMethod]
         public void ReturnsCorrectCountOfContents()
         {
-            Assert.AreEqual(2, tableLayout.GetContentCount());
+            Assert.AreEqual(2, _tableLayout.GetContentCount());
         }
 
         [TestMethod]
         public void ReturnsLinkFromHeader()
         {
-            Assert.AreEqual("Header 3", tableLayout.HeaderLinkValue(3));
+            Assert.AreEqual("Header 3", _tableLayout.HeaderLinkValue(3));
         }
 
         [TestMethod]
         public void ReturnsContentFromHeader()
         {
-            Assert.AreEqual("Header 2", tableLayout.HeaderValue(2));
+            Assert.AreEqual("Header 2", _tableLayout.HeaderValue(2));
         }
-
-        //[TestMethod]
-        //public void ReturnCorrectValuesOfCell()
-        //{
-        //    IPage page = browser.CurrentPage();
-        //    ITable table = page.Table("oneTable");
-
-        //    Assert.AreEqual("Row 1 - Cell 1", table.Cell(1, 1));
-        //    Assert.AreEqual("Row 2 - Cell 2", table.Cell(2, "Header 2"));
-        //}
-
-        //[TestMethod]
-        //public void ReturnCorrectRowNumberFromColumnSearch()
-        //{
-        //    IPage page = browser.CurrentPage();
-        //    ITable table = page.Table("oneTable");
-
-        //    Assert.AreEqual(2, table.Column("Header 1").Find("Row 2 - Cell 1"));
-        //}
 
         [TestMethod]
         public void ReturnCorrectValueOfCellAtGivenRow()
         {
-            Assert.AreEqual("Row 1 - Cell 2", tableLayout.Value(1, 2));
+            Assert.AreEqual("Row 1 - Cell 2", _tableLayout.Value(1, 2));
         }
 
     }

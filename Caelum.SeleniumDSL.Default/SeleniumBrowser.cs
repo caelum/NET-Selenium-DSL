@@ -3,7 +3,7 @@ using Selenium;
 
 namespace Caelum.SeleniumDSL.Default
 {
-    public class SeleniumBrowser : IBrowser<ISelenium>
+    public sealed class SeleniumBrowser : IBrowser<ISelenium>
     {
         private readonly ISelenium _selenium;
         private readonly long _timeout;
@@ -16,8 +16,8 @@ namespace Caelum.SeleniumDSL.Default
 
         public SeleniumBrowser(ISelenium selenium, long timeout)
         {
-            this._selenium = selenium;
-            this._timeout = timeout;
+            _selenium = selenium;
+            _timeout = timeout;
         }
 
         public IPage Open(string url)

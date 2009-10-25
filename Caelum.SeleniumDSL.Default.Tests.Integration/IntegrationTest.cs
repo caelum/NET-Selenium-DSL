@@ -36,27 +36,27 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
 
         public void openIndex()
         {
-            browser.Open("/index.htm");
+            browser.Open("/index.html");
         }
 
         public void openEvents()
         {
-            browser.Open("/events.htm");
+            browser.Open("/events.html");
         }
 
         public void openFullTable()
         {
-            browser.Open("/fulltable.htm");
+            browser.Open("/fulltable.html");
         }
 
         public void openPlainTable()
         {
-            browser.Open("/plaintable.htm");
+            browser.Open("/plaintable.html");
         }
 
         public void openPlainTablePlusTh()
         {
-            browser.Open("plaintableplusth.htm");
+            browser.Open("plaintableplusth.html");
         }
     }
 }

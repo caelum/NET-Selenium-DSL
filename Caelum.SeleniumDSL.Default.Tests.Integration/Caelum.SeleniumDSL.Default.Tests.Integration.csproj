@@ -81,6 +81,7 @@
     <Compile Include="FieldTest.cs" />
     <Compile Include="FileReaderModule.cs" />
     <Compile Include="ContentTagTest.cs" />
+    <Compile Include="Table\Class1.cs" />
     <Compile Include="Table\Layout\PlainTablePlusThLayoutTest.cs" />
     <Compile Include="Table\Layout\PlainTableLayoutTest.cs" />
     <Compile Include="Table\Layout\FullTableLayoutTest.cs" />

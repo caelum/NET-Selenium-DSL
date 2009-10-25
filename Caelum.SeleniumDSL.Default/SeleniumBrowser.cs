@@ -5,42 +5,42 @@ namespace Caelum.SeleniumDSL.Default
 {
     public class SeleniumBrowser : IBrowser<ISelenium>
     {
-        private ISelenium selenium;
-        private long timeout;
+        private readonly ISelenium _selenium;
+        private readonly long _timeout;
 
         public SeleniumBrowser(ISelenium selenium)
         {
-            this.selenium = selenium;
-            this.timeout = 10000;
+            _selenium = selenium;
+            _timeout = 10000;
         }
 
         public SeleniumBrowser(ISelenium selenium, long timeout)
         {
-            this.selenium = selenium;
-            this.timeout = timeout;
+            this._selenium = selenium;
+            this._timeout = timeout;
         }
 
         public IPage Open(string url)
         {
-            selenium.Open(url);
-            selenium.WaitForPageToLoad(timeout.ToString());
+            _selenium.Open(url);
+            _selenium.WaitForPageToLoad(_timeout.ToString());
             return CurrentPage();
         }
 
         public IPage CurrentPage()
         {
-            return new Page(selenium, timeout);
+            return new Page(_selenium, _timeout);
         }
 
         public IPage WaitForPageLoad(long timeout)
         {
-            selenium.WaitForPageToLoad(timeout.ToString());
+            _selenium.WaitForPageToLoad(timeout.ToString());
             return CurrentPage();
         }
 
         public ISelenium GetDelegate()
         {
-            return selenium;
+            return _selenium;
         }
 
         public IPage Window(string id)

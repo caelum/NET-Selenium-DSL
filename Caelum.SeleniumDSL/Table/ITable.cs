@@ -4,9 +4,10 @@ namespace Caelum.SeleniumDSL.Table
 {
     public interface ITable
     {
-        string GetType();
+        //should be GetTableType??
+        //string GetType();
 
-        IColumn Column(int columnIndex);
+        IColumn Column(int columnNumber);
 
         IColumn Column(string columnName);
 
@@ -34,7 +35,7 @@ namespace Caelum.SeleniumDSL.Table
 
         IRowMatcher Select(IRowMatcher matcher);
 
-        bool Contains(ITable table, string column, string content);
+        bool Contains(string column, string content);
 
         //ITableCriteria CreateCriteria();
 

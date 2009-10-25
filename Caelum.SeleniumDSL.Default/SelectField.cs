@@ -4,48 +4,48 @@ namespace Caelum.SeleniumDSL.Default
 {
     internal class SelectField : ISelectField
     {
-        private ISelenium selenium;
-        private IForm form;
-        private string id;
+        private readonly ISelenium _selenium;
+        private readonly IForm _form;
+        private readonly string _id;
 
         public SelectField(ISelenium selenium, IForm form, string id)
         {
-            this.selenium = selenium;
-            this.form = form;
-            this.id = id;
+            _selenium = selenium;
+            _form = form;
+            _id = id;
         }
 
         public IForm Choose(string value)
         {
-            selenium.Select(id, value);
-            return form;
+            _selenium.Select(_id, value);
+            return _form;
         }
 
         public IForm Choose(int index)
         {
-            string[] options = selenium.GetSelectOptions(id);
-            selenium.Select(id, options[index]);
-            return form;
+            string[] options = _selenium.GetSelectOptions(_id);
+            _selenium.Select(_id, options[index]);
+            return _form;
         }
 
         public string Value()
         {
-            return selenium.GetValue(id);
+            return _selenium.GetValue(_id);
         }
 
         public string[] Values()
         {
-            return selenium.GetSelectOptions(id);
+            return _selenium.GetSelectOptions(_id);
         }
 
         public string Content()
         {
-            return selenium.GetSelectedLabel(id);
+            return _selenium.GetSelectedLabel(_id);
         }
 
         public void Blur()
         {
-            selenium.FireEvent(id, "blur");
+            _selenium.FireEvent(_id, "blur");
         }
     }
 }

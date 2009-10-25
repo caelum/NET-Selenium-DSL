@@ -19,19 +19,14 @@ namespace Caelum.SeleniumDSL.Default.Table
             _id = id;
         }
 
-        public new string GetType()
+        public IColumn Column(int columnNumber)
         {
-            throw new NotImplementedException();
-        }
-
-        public IColumn Column(int columnIndex)
-        {
-            return new Column(this, columnIndex);
+            return new Column(this, columnNumber);
         }
 
         public IColumn Column(string columnName)
         {
-            throw new NotImplementedException();
+            return Column(FindColumn(columnName));
         }
 
         public int GetColumnCount()
@@ -94,9 +89,15 @@ namespace Caelum.SeleniumDSL.Default.Table
             throw new NotImplementedException();
         }
 
-        public bool Contains(ITable table, string column, string content)
+        public bool Contains(string column, string content)
         {
-            throw new NotImplementedException();
+            int count = _layout.GetRowCount();
+            for (int i = 1; i <= count; i++)
+            {
+                if (Cell(i, column).Contains(content))
+                    return true;
+            }
+            return false;
         }
     }
 }

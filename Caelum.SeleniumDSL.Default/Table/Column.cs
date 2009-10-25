@@ -4,13 +4,13 @@ namespace Caelum.SeleniumDSL.Default.Table
 {
     internal class Column : IColumn
     {
-        private ITable table;
-        private int columnNumber;
+        private readonly ITable _table;
+        private readonly int _columnNumber;
 
         public Column(ITable table, int columnNumber)
         {
-            this.table = table;
-            this.columnNumber = columnNumber;
+            _table = table;
+            _columnNumber = columnNumber;
         }
 
         public bool Contains(string text)
@@ -18,22 +18,16 @@ namespace Caelum.SeleniumDSL.Default.Table
             return Find(text) != -1;
         }
 
-        // TODO: implement XPath search
         public bool ContainsPartial(string value)
         {
-            int rowCount = table.GetRowCount();
-            for (int i = 0; i < rowCount; i++)
-                if (table.Cell(i, columnNumber).Contains(value))
-                    return true;
-            return false;
+            return Find(value) >= 0;
         }
 
-        // TODO: implement XPath search
         public int Find(string text)
         {
-            int rowCount = table.GetRowCount();
+            int rowCount = _table.GetRowCount();
             for (int i = 0; i < rowCount; i++)
-                if (table.Cell(i, columnNumber).Contains(text))
+                if (_table.Cell(i, _columnNumber).Contains(text))
                     return i;
             return -1;
         }

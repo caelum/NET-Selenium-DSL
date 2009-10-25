@@ -9,18 +9,16 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
 {
     public class FileReaderModule : HttpModule
     {
-        private List<string> ignoredPaths;
+        private readonly List<string> _ignoredPaths;
 
         public FileReaderModule()
         {
-            ignoredPaths = new List<string>();
-            ignoredPaths.Add("/favicon.ico");
-            ignoredPaths.Add("/");
+            _ignoredPaths = new List<string> {"/favicon.ico", "/"};
         }
 
         public override bool Process(IHttpRequest request, IHttpResponse response, IHttpSession session)
         {
-            if (ignoredPaths.Contains(request.Uri.AbsolutePath))
+            if (_ignoredPaths.Contains(request.Uri.AbsolutePath))
                 return true;
 
             TextWriter writer = new StreamWriter(response.Body);

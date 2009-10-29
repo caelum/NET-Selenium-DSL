@@ -19,6 +19,11 @@ namespace Caelum.SeleniumDSL.Default.Table
             _id = id;
         }
 
+        internal ITableLayout Layout
+        {
+            get { return _layout; }
+        }
+
         public IColumn Column(int columnNumber)
         {
             return new Column(this, columnNumber);

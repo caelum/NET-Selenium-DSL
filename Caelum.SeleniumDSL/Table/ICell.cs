@@ -4,18 +4,18 @@
     {
         string Value();
 
-        string GetLink();
+        //string GetLink();
 
-        string HeaderValue();
+        //string HeaderValue();
 
-        string HeaderLinkValue();
+        //string HeaderLinkValue();
 
-        ICell Check();
+        //ICell Check();
 
-        ICell Uncheck();
+        //ICell Uncheck();
 
-        bool Checked();
+        //bool Checked();
 
-        bool Contains(string content);
+        bool Contains(string text);
     }
 }

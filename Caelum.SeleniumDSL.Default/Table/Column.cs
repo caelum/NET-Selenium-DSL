@@ -31,5 +31,6 @@ namespace Caelum.SeleniumDSL.Default.Table
                     return i;
             return -1;
         }
+
     }
 }

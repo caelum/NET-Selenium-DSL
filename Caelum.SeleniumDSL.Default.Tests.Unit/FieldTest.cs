@@ -8,26 +8,26 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestBlur()
         {
-            selenium.Setup(o => o.FireEvent("", "blur"));
+            Selenium.Setup(o => o.FireEvent("", "blur"));
 
-            new Field(selenium.Object, null, "").Blur();
+            new Field(Selenium.Object, null, "").Blur();
         }
 
         [TestMethod]
         public void TestChange()
         {
-            selenium.Setup(o => o.FireEvent("", "change"));
+            Selenium.Setup(o => o.FireEvent("", "change"));
 
-            new Field(selenium.Object, null, "").Change();
+            new Field(Selenium.Object, null, "").Change();
         }
 
         [TestMethod]
         public void TestContains()
         {
-            selenium.Setup(o => o.GetValue("someId"))
+            Selenium.Setup(o => o.GetValue("someId"))
                 .Returns("Some text");
 
-            var field = new Field(selenium.Object, null, "someId");
+            var field = new Field(Selenium.Object, null, "someId");
 
             Assert.IsTrue(field.Contains("text"));
         }
@@ -35,10 +35,10 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestContent()
         {
-            selenium.Setup(o => o.GetValue("someId"))
+            Selenium.Setup(o => o.GetValue("someId"))
                 .Returns("Some text");
 
-            var field = new Field(selenium.Object, null, "someId");
+            var field = new Field(Selenium.Object, null, "someId");
 
             Assert.AreEqual("Some text", field.Content());
         }
@@ -46,9 +46,9 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestType()
         {
-            selenium.Setup(o => o.Type("someId", "Some text"));
+            Selenium.Setup(o => o.Type("someId", "Some text"));
 
-            var field = new Field(selenium.Object, null, "someId");
+            var field = new Field(Selenium.Object, null, "someId");
 
             field.Type("Some text");
         }

@@ -6,20 +6,20 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
 {
     public class UnitTest
     {
-        protected MockFactory factory;
-        protected Mock<ISelenium> selenium;
+        protected MockFactory Factory;
+        protected Mock<ISelenium> Selenium;
 
         [TestInitialize]
         public void SetUp()
         {
-            factory = new MockFactory(MockBehavior.Default);
-            selenium = factory.Create<ISelenium>();
+            Factory = new MockFactory(MockBehavior.Default);
+            Selenium = Factory.Create<ISelenium>();
         }
 
         [TestCleanup]
         public void TearDown()
         {
-            factory.VerifyAll();
+            Factory.VerifyAll();
         }
     }
 }

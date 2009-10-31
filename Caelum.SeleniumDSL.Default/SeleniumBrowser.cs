@@ -1,5 +1,4 @@
-﻿using System;
-using Selenium;
+﻿using Selenium;
 
 namespace Caelum.SeleniumDSL.Default
 {
@@ -43,9 +42,9 @@ namespace Caelum.SeleniumDSL.Default
             return _selenium;
         }
 
-        public IPage Window(string id)
-        {
-            throw new NotImplementedException();
-        }
+        //public IPage Window(string id)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

@@ -51,27 +51,27 @@ namespace Caelum.SeleniumDSL.Default.Table
 
         public IRow Header()
         {
-            throw new NotImplementedException();
+            return new Row(this, 1);
         }
 
         public IRow Row(int row)
         {
-            throw new NotImplementedException();
+            return new Row(this, row);
         }
 
-        public ICell Cell(int row, int col)
+        public ICell Cell(int row, int column)
         {
-            throw new NotImplementedException();
+            return new Cell(this, row, column);
         }
 
-        public ICell Cell(int row, string col)
+        public ICell Cell(int row, string column)
         {
-            throw new NotImplementedException();
+            return new Cell(this, row, FindColumn(column));
         }
 
         public string GetId()
         {
-            throw new NotImplementedException();
+            return _id;
         }
 
         public bool Exists()
@@ -86,7 +86,8 @@ namespace Caelum.SeleniumDSL.Default.Table
 
         public int FindColumn(string columnName)
         {
-            throw new NotImplementedException();
+            //_layout.
+            return 0;
         }
 
         public IRowMatcher Select(IRowMatcher matcher)

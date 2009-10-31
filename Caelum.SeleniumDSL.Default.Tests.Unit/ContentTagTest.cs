@@ -9,10 +9,10 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestContains()
         {
-            selenium.Setup(o => o.GetText(It.IsAny<string>()))
+            Selenium.Setup(o => o.GetText(It.IsAny<string>()))
                 .Returns("Some text");
 
-            var tag = new ContentTag(selenium.Object, "someId");
+            var tag = new ContentTag(Selenium.Object, "someId");
 
             Assert.IsTrue(tag.Contains("text"));
         }
@@ -20,23 +20,23 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestExists()
         {
-            selenium.Setup(o => o.IsElementPresent("someId"))
+            Selenium.Setup(o => o.IsElementPresent("someId"))
                 .Returns(true);
 
-            var tag = new ContentTag(selenium.Object, "someId");
+            var tag = new ContentTag(Selenium.Object, "someId");
 
             Assert.IsTrue(tag.Exists());
         }
 
         [TestMethod]
-        public void TestInnerHTML()
+        public void TestInnerHtml()
         {
-            selenium.Setup(o => o.GetText("someId"))
+            Selenium.Setup(o => o.GetText("someId"))
                 .Returns("Some text");
 
-            var tag = new ContentTag(selenium.Object, "someId");
+            var tag = new ContentTag(Selenium.Object, "someId");
 
-            Assert.AreEqual("Some text", tag.InnerHTML());
+            Assert.AreEqual("Some text", tag.InnerHtml());
         }
     }
 }

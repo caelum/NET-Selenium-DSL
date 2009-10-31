@@ -10,6 +10,6 @@
 
         T GetDelegate();
 
-        IPage Window(string id);
+        //IPage Window(string id);
     }
 }

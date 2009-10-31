@@ -8,9 +8,9 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestBlur()
         {
-            selenium.Setup(o => o.FireEvent("selectId", "blur"));
+            Selenium.Setup(o => o.FireEvent("selectId", "blur"));
 
-            var select = new SelectField(selenium.Object, null, "selectId");
+            var select = new SelectField(Selenium.Object, null, "selectId");
 
             select.Blur();
         }
@@ -18,9 +18,9 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestChooseWithExpectedValue()
         {
-            selenium.Setup(o => o.Select("selectId", "Element"));
+            Selenium.Setup(o => o.Select("selectId", "Element"));
 
-            var select = new SelectField(selenium.Object, null, "selectId");
+            var select = new SelectField(Selenium.Object, null, "selectId");
 
             select.Choose("Element");
         }
@@ -28,11 +28,11 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestChooseWithExpectedIndexValue()
         {
-            selenium.Setup(o => o.Select("selectId", "Element"));
-            selenium.Setup(o => o.GetSelectOptions("selectId"))
+            Selenium.Setup(o => o.Select("selectId", "Element"));
+            Selenium.Setup(o => o.GetSelectOptions("selectId"))
                 .Returns(new[] {"", "", "Element"});
 
-            var select = new SelectField(selenium.Object, null, "selectId");
+            var select = new SelectField(Selenium.Object, null, "selectId");
 
             select.Choose(2);
         }
@@ -40,9 +40,9 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void Content()
         {
-            selenium.Setup(o => o.GetSelectedLabel("selectId"));
+            Selenium.Setup(o => o.GetSelectedLabel("selectId"));
 
-            var select = new SelectField(selenium.Object, null, "selectId");
+            var select = new SelectField(Selenium.Object, null, "selectId");
 
             select.Content();
         }
@@ -50,9 +50,9 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void Value()
         {
-            selenium.Setup(o => o.GetValue("selectId"));
+            Selenium.Setup(o => o.GetValue("selectId"));
 
-            var select = new SelectField(selenium.Object, null, "selectId");
+            var select = new SelectField(Selenium.Object, null, "selectId");
 
             select.Value();
         }
@@ -60,9 +60,9 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void Values()
         {
-            selenium.Setup(o => o.GetSelectOptions("selectId"));
+            Selenium.Setup(o => o.GetSelectOptions("selectId"));
 
-            var select = new SelectField(selenium.Object, null, "selectId");
+            var select = new SelectField(Selenium.Object, null, "selectId");
 
             select.Values();
         }

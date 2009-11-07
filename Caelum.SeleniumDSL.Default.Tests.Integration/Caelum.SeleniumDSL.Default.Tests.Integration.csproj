@@ -87,11 +87,9 @@
     <Compile Include="Table\Layout\TableLayoutChooserTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="resources\fulltable.html" />
     <Content Include="resources\plaintableplusth.html" />
     <Content Include="resources\plaintable.html" />
-    <Content Include="resources\events.html" />
-    <Content Include="resources\fulltable.html" />
-    <Content Include="resources\index.html" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">

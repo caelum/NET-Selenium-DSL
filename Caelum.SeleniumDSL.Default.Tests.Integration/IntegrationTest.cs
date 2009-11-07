@@ -34,16 +34,6 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
             _server.Stop();
         }
 
-        public void OpenIndex()
-        {
-            Browser.Open("/index.html");
-        }
-
-        public void OpenEvents()
-        {
-            Browser.Open("/events.html");
-        }
-
         public void OpenFullTable()
         {
             Browser.Open("/fulltable.html");

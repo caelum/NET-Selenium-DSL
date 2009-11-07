@@ -28,12 +28,6 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
             Assert.AreEqual(3, _tableLayout.GetColumnCount());
         }
 
-        //[TestMethod]
-        //public void ReturnsCorrectLocationOfColumn()
-        //{
-        //    Assert.AreEqual(2, table.FindColumn("Header 2"));
-        //}
-
         [TestMethod]
         public void ReturnsCorrectCountOfContents()
         {
@@ -51,25 +45,6 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
         {
             Assert.AreEqual("Header 2", _tableLayout.HeaderValue(2));
         }
-
-        //[TestMethod]
-        //public void ReturnCorrectValuesOfCell()
-        //{
-        //    IPage page = Browser.CurrentPage();
-        //    ITable table = page.Table("oneTable");
-
-        //    Assert.AreEqual("Row 1 - Cell 1", table.Cell(1, 1));
-        //    Assert.AreEqual("Row 2 - Cell 2", table.Cell(2, "Header 2"));
-        //}
-
-        //[TestMethod]
-        //public void ReturnCorrectRowNumberFromColumnSearch()
-        //{
-        //    IPage page = Browser.CurrentPage();
-        //    ITable table = page.Table("oneTable");
-
-        //    Assert.AreEqual(2, table.Column("Header 1").Find("Row 2 - Cell 1"));
-        //}
 
         [TestMethod]
         public void ReturnCorrectValueOfCellAtGivenRow()

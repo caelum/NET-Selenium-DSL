@@ -78,14 +78,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FieldTest.cs" />
     <Compile Include="FileReaderModule.cs" />
-    <Compile Include="ContentTagTest.cs" />
     <Compile Include="Table\Layout\PlainTablePlusThLayoutTest.cs" />
     <Compile Include="Table\Layout\PlainTableLayoutTest.cs" />
     <Compile Include="Table\Layout\FullTableLayoutTest.cs" />
     <Compile Include="IntegrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table\Layout\TableLayoutChooserTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\plaintableplusth.html" />

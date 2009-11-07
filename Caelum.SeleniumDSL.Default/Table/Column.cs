@@ -15,15 +15,10 @@ namespace Caelum.SeleniumDSL.Default.Table
 
         public bool Contains(string text)
         {
-            return Find(text) != -1;
+            return FindRow(text) != -1;
         }
 
-        public bool ContainsPartial(string value)
-        {
-            return Find(value) >= 0;
-        }
-
-        public int Find(string text)
+        public int FindRow(string text)
         {
             int rowCount = _table.GetRowCount();
             for (int i = 0; i < rowCount; i++)

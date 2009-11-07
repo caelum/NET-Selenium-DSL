@@ -42,9 +42,5 @@ namespace Caelum.SeleniumDSL.Default
             return _selenium;
         }
 
-        //public IPage Window(string id)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

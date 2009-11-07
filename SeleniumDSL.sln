@@ -10,11 +10,15 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B822A1C1-CDB5-43C5-AFA0-567251A688EF}"
 	ProjectSection(SolutionItems) = preProject
 		SeleniumDSL.testrunconfig = SeleniumDSL.testrunconfig
+		SeleniumDSL.vsmdi = SeleniumDSL.vsmdi
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caelum.SeleniumDSL.Default", "Caelum.SeleniumDSL.Default\Caelum.SeleniumDSL.Default.csproj", "{42317374-060E-4020-8F89-9C8B22206EF8}"
 EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SeleniumDSL.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

@@ -4,8 +4,6 @@
     {
         bool Contains(string text);
 
-        bool ContainsPartial(string value);
-
-        int Find(string text);
+        int FindRow(string text);
     }
 }

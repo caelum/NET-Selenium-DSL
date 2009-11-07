@@ -40,6 +40,8 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
     <Reference Include="ThoughtWorks.Selenium.Core, Version=0.0.0.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\ThoughtWorks.Selenium.Core.dll</HintPath>
@@ -49,6 +51,7 @@
     <Compile Include="FormTest.cs" />
     <Compile Include="PageTest.cs" />
     <Compile Include="SelectFieldTest.cs" />
+    <Compile Include="Table\Layout\TableLayoutChooserTest.cs" />
     <Compile Include="UnitTest.cs" />
     <Compile Include="ContentTagTest.cs" />
     <Compile Include="FieldTest.cs" />

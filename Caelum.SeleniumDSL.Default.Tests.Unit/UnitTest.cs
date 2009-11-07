@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Selenium;
 
@@ -6,20 +7,21 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
 {
     public class UnitTest
     {
-        protected MockFactory Factory;
+        protected MockFactory MockFactory;
         protected Mock<ISelenium> Selenium;
 
         [TestInitialize]
         public void SetUp()
         {
-            Factory = new MockFactory(MockBehavior.Default);
-            Selenium = Factory.Create<ISelenium>();
+            MockFactory = new MockFactory(MockBehavior.Default);
+            Selenium = MockFactory.Create<ISelenium>();
         }
 
         [TestCleanup]
         public void TearDown()
         {
-            Factory.VerifyAll();
+            Console.WriteLine("Verificando mocks");
+            MockFactory.VerifyAll();
         }
     }
 }

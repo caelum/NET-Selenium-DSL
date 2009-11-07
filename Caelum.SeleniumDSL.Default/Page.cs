@@ -34,7 +34,7 @@ namespace Caelum.SeleniumDSL.Default
 
         public ITable Table(string id)
         {
-            ITableLayout layout = new FullTableLayout(_selenium, id);
+            ITableLayout layout = new TableLayoutChooser(_selenium, id).GetLayout();
             return new Table.Table(_selenium, layout, id);
         }
 

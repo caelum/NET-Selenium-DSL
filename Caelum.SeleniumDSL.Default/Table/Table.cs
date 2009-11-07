@@ -1,7 +1,7 @@
 ﻿using System;
+using Caelum.SeleniumDSL.Default.Table.Layout;
 using Caelum.SeleniumDSL.Search;
 using Caelum.SeleniumDSL.Table;
-using Caelum.SeleniumDSL.Table.Layout;
 using Selenium;
 
 namespace Caelum.SeleniumDSL.Default.Table
@@ -10,7 +10,7 @@ namespace Caelum.SeleniumDSL.Default.Table
     {
         private ISelenium _selenium;
         private readonly ITableLayout _layout;
-        private string _id;
+        private readonly string _id;
 
         public Table(ISelenium selenium, ITableLayout layout, string id)
         {

@@ -35,7 +35,6 @@
   <ItemGroup>
     <Compile Include="Search\IRowMatcher.cs" />
     <Compile Include="Search\IRowVisitor.cs" />
-    <Compile Include="Table\Layout\ITableLayout.cs" />
     <Compile Include="Table\ICell.cs" />
     <Compile Include="Table\IColumn.cs" />
     <Compile Include="Table\IRow.cs" />

@@ -1,6 +1,6 @@
-﻿namespace Caelum.SeleniumDSL.Table.Layout
+﻿namespace Caelum.SeleniumDSL.Default.Table.Layout
 {
-    public interface ITableLayout
+    internal interface ITableLayout
     {
         string HeaderValue(int column);
 
@@ -13,7 +13,5 @@
         int GetColumnCount();
 
         int GetRowCount();
-
-        
     }
 }

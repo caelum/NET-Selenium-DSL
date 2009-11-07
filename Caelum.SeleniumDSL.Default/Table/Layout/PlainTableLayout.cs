@@ -1,5 +1,4 @@
-﻿using Caelum.SeleniumDSL.Table.Layout;
-using Selenium;
+﻿using Selenium;
 
 namespace Caelum.SeleniumDSL.Default.Table.Layout
 {

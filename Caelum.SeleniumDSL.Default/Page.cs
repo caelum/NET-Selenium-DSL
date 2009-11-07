@@ -1,6 +1,5 @@
 ﻿using Caelum.SeleniumDSL.Default.Table.Layout;
 using Caelum.SeleniumDSL.Table;
-using Caelum.SeleniumDSL.Table.Layout;
 using Selenium;
 using TableSpace = Caelum.SeleniumDSL.Table;
 

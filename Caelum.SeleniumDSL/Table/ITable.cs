@@ -1,4 +1,4 @@
-﻿using Caelum.SeleniumDSL.Search;
+﻿using Caelum.SeleniumDSL.Table.Search;
 
 namespace Caelum.SeleniumDSL.Table
 {

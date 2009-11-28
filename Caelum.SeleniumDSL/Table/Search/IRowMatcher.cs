@@ -1,6 +1,4 @@
-﻿using Caelum.SeleniumDSL.Table;
-
-namespace Caelum.SeleniumDSL.Search
+﻿namespace Caelum.SeleniumDSL.Table.Search
 {
     public interface IRowMatcher
     {

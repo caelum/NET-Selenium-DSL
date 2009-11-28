@@ -1,7 +1,7 @@
 ﻿using System;
 using Caelum.SeleniumDSL.Default.Table.Layout;
-using Caelum.SeleniumDSL.Search;
 using Caelum.SeleniumDSL.Table;
+using Caelum.SeleniumDSL.Table.Search;
 using Selenium;
 
 namespace Caelum.SeleniumDSL.Default.Table

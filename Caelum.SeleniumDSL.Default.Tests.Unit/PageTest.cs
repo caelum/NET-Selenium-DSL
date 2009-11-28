@@ -5,14 +5,21 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
     [TestClass]
     public class PageTest : UnitTest
     {
+        private IPage _page;
+
+        [TestInitialize]
+        public new void SetUp()
+        {
+            base.SetUp();
+            _page = new Page(Selenium.Object, 10000);
+        }
+
         [TestMethod]
         public void TestClick()
         {
             Selenium.Setup(o => o.Click("someElement"));
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.Click("someElement");
+            _page.Click("someElement");
         }
 
         [TestMethod]
@@ -20,9 +27,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         {
             Selenium.Setup(o => o.Click("link=someElement"));
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.ClickLink("someElement");
+            _page.ClickLink("someElement");
         }
 
         [TestMethod]
@@ -30,9 +35,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         {
             Selenium.Setup(o => o.DoubleClick("someElement"));
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.DoubleClick("someElement");
+            _page.DoubleClick("someElement");
         }
 
         [TestMethod]
@@ -40,9 +43,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         {
             Selenium.Setup(o => o.DragAndDrop("from", "to"));
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.DragAndDrop("from", "to");
+            _page.DragAndDrop("from", "to");
         }
 
         [TestMethod]
@@ -50,9 +51,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         {
             Selenium.Setup(o => o.IsTextPresent("someLink"));
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.HasLink("someLink");
+            _page.HasLink("someLink");
         }
 
         [TestMethod]
@@ -60,9 +59,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         {
             Selenium.Setup(o => o.GetEval("this.browserbot.getCurrentWindow().someFunction()"));
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.Invoke("someFunction()");
+            _page.Invoke("someFunction()");
         }
 
         [TestMethod]
@@ -70,9 +67,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         {
             Selenium.Setup(o => o.MouseDown("someElement"));
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.MouseDown("someElement");
+            _page.MouseDown("someElement");
         }
 
         [TestMethod]
@@ -80,9 +75,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         {
             Selenium.Setup(o => o.MouseUp("someElement"));
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.MouseUp("someElement");
+            _page.MouseUp("someElement");
         }
 
         [TestMethod]
@@ -91,9 +84,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
             Selenium.Setup(o => o.Click("someLink"));
             Selenium.Setup(o => o.WaitForPageToLoad("10000"));
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.Navigate("someLink");
+            _page.Navigate("someLink");
         }
 
         [TestMethod]
@@ -102,9 +93,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
             Selenium.Setup(o => o.Click("link=someLink"));
             Selenium.Setup(o => o.WaitForPageToLoad("10000"));
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.NavigateLink("someLink");
+            _page.NavigateLink("someLink");
         }
 
         [TestMethod]
@@ -112,9 +101,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         {
             Selenium.Setup(o => o.Refresh());
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.Refresh();
+            _page.Refresh();
         }
 
         [TestMethod]
@@ -122,9 +109,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         {
             Selenium.Setup(o => o.CaptureScreenshot("someFilePath"));
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.Screenshot("someFilePath");
+            _page.Screenshot("someFilePath");
         }
 
         [TestMethod]
@@ -132,9 +117,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         {
             Selenium.Setup(o => o.GetTitle());
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.Title();
+            _page.Title();
         }
 
         [TestMethod]
@@ -142,9 +125,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         {
             Selenium.Setup(o => o.WaitForCondition("this.browserbot.getCurrentWindow().prop === true", "3000"));
 
-            var page = new Page(Selenium.Object, 10000);
-
-            page.WaitUntil("prop === true", 3000);
+            _page.WaitUntil("prop === true", 3000);
         }
     }
 }

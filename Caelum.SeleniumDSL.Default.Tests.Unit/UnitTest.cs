@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Selenium;
 
@@ -20,7 +19,6 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestCleanup]
         public void TearDown()
         {
-            Console.WriteLine("Verificando mocks");
             MockFactory.VerifyAll();
         }
     }

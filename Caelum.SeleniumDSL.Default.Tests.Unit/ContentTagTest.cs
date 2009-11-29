@@ -1,42 +1,49 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+﻿using Caelum.SeleniumDSL.Default.Selector;
+using Caelum.SeleniumDSL.Selector;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Caelum.SeleniumDSL.Default.Tests.Unit
 {
     [TestClass]
     public class ContentTagTest : UnitTest
     {
+        private IContentTag _tag;
+        private string _expression;
+
+        [TestInitialize]
+        public new void Setup()
+        {
+            base.Setup();
+            ISelector selector = Id.Is("someId");
+            _tag = new ContentTag(Selenium.Object, selector);
+            _expression = selector.GetExpression();
+        }
+
         [TestMethod]
         public void TestContains()
         {
-            Selenium.Setup(o => o.GetText(It.IsAny<string>()))
+            Selenium.Setup(o => o.GetText("//*" + _expression))
                 .Returns("Some text");
 
-            var tag = new ContentTag(Selenium.Object, "someId");
-
-            Assert.IsTrue(tag.Contains("text"));
+            Assert.IsTrue(_tag.Contains("text"));
         }
 
         [TestMethod]
         public void TestExists()
         {
-            Selenium.Setup(o => o.IsElementPresent("someId"))
+            Selenium.Setup(o => o.IsElementPresent("//*" + _expression))
                 .Returns(true);
 
-            var tag = new ContentTag(Selenium.Object, "someId");
-
-            Assert.IsTrue(tag.Exists());
+            Assert.IsTrue(_tag.Exists());
         }
 
         [TestMethod]
         public void TestInnerHtml()
         {
-            Selenium.Setup(o => o.GetText("someId"))
+            Selenium.Setup(o => o.GetText("//*" + _expression))
                 .Returns("Some text");
 
-            var tag = new ContentTag(Selenium.Object, "someId");
-
-            Assert.AreEqual("Some text", tag.InnerHtml());
+            Assert.AreEqual("Some text", _tag.InnerHtml());
         }
     }
 }

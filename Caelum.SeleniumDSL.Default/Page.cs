@@ -1,4 +1,5 @@
-﻿using Caelum.SeleniumDSL.Default.Table.Layout;
+﻿using Caelum.SeleniumDSL.Default.Selector;
+using Caelum.SeleniumDSL.Default.Table.Layout;
 using Caelum.SeleniumDSL.Selector;
 using Caelum.SeleniumDSL.Table;
 using Selenium;
@@ -22,14 +23,14 @@ namespace Caelum.SeleniumDSL.Default
             return new Form(_selenium, _timeout, selector);
         }
 
-        public IContentTag Div(string id)
+        public IContentTag Div(ISelector selector)
         {
-            return new ContentTag(_selenium, id);
+            return new ContentTag(_selenium, selector);
         }
 
         public IContentTag Span(string id)
         {
-            return new ContentTag(_selenium, id);
+            return new ContentTag(_selenium, Id.Is(id));
         }
 
         public ITable Table(string id)

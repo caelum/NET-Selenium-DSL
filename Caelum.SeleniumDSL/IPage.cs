@@ -6,8 +6,8 @@ namespace Caelum.SeleniumDSL
     public interface IPage
     {
         IForm Form(ISelector selector);
-
-        IContentTag Div(string id);
+        
+        IContentTag Div(ISelector id);
 
         IContentTag Span(string id);
 

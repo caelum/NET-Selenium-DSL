@@ -1,4 +1,5 @@
-﻿using Selenium;
+﻿using Caelum.SeleniumDSL.Selector;
+using Selenium;
 
 namespace Caelum.SeleniumDSL.Default
 {
@@ -7,10 +8,10 @@ namespace Caelum.SeleniumDSL.Default
         private readonly ISelenium _selenium;
         private readonly string _id;
 
-        public ContentTag(ISelenium selenium, string id)
+        public ContentTag(ISelenium selenium, ISelector selector)
         {
             _selenium = selenium;
-            _id = id;
+            _id = string.Format("//*{0}", selector.GetExpression());
         }
 
         public bool Contains(string content)

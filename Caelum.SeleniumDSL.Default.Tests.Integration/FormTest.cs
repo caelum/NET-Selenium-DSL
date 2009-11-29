@@ -14,7 +14,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
             IPage page = Browser.CurrentPage();
             page.Form(Id.Is("testform")).Submit();
 
-            Assert.IsTrue(page.Div("ok").Exists());
+            Assert.IsTrue(page.Div(Id.Is("ok")).Exists());
         }
     }
 }

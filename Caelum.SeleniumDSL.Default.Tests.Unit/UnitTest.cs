@@ -10,7 +10,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         protected Mock<ISelenium> Selenium;
 
         [TestInitialize]
-        public void Setup()
+        public virtual void Setup()
         {
             MockFactory = new MockFactory(MockBehavior.Default);
             Selenium = MockFactory.Create<ISelenium>();

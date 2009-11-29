@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileReaderModule.cs" />
+    <Compile Include="FormTest.cs" />
     <Compile Include="Table\Layout\PlainTablePlusThLayoutTest.cs" />
     <Compile Include="Table\Layout\PlainTableLayoutTest.cs" />
     <Compile Include="Table\Layout\FullTableLayoutTest.cs" />
@@ -87,9 +88,11 @@
     <Compile Include="Table\Layout\TableLayoutChooserTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="resources\fulltable.html" />
-    <Content Include="resources\plaintableplusth.html" />
-    <Content Include="resources\plaintable.html" />
+    <Content Include="resources\form\form.html" />
+    <Content Include="resources\form\post-ok.html" />
+    <Content Include="resources\table\fulltable.html" />
+    <Content Include="resources\table\plaintableplusth.html" />
+    <Content Include="resources\table\plaintable.html" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">

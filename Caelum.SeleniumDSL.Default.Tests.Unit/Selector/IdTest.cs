@@ -11,7 +11,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit.Selector
         {
             string expression = Id.Is("someId").GetExpression();
 
-            Assert.AreEqual("@id='someId'", expression);
+            Assert.AreEqual("[@id='someId']", expression);
         }
 
         [TestMethod]
@@ -19,7 +19,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit.Selector
         {
             string expression = Id.Contains("someId").GetExpression();
 
-            Assert.AreEqual("contains(@id, 'someId')", expression);
+            Assert.AreEqual("[contains(@id, 'someId')]", expression);
         }
     }
 }

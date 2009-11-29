@@ -7,18 +7,19 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit.Selector
     public class NameTest
     {
         [TestMethod]
-        public void ReturnsExpectedExpressionForFullName()
+        public void ReturnExpectedExpressionForFullName()
         {
             string expr = Name.Is("someName").GetExpression();
 
-            Assert.AreEqual("@name='someName'", expr);
+            Assert.AreEqual("[@name='someName']", expr);
         }
 
         [TestMethod]
-        public void ReturnsExpectedExpressionForPartialName()
+        public void ReturnExpectedExpressionForPartialName()
         {
             string expr = Name.Contains("someName").GetExpression();
-            Assert.AreEqual("contains(@name, 'someName')", expr, true);
+
+            Assert.AreEqual("[contains(@name, 'someName')]", expr, true);
         }
 
     }

@@ -1,5 +1,4 @@
-﻿using System;
-using Caelum.SeleniumDSL.Selector;
+﻿using Caelum.SeleniumDSL.Selector;
 
 namespace Caelum.SeleniumDSL.Default.Selector
 {
@@ -27,7 +26,7 @@ namespace Caelum.SeleniumDSL.Default.Selector
 
         public string GetExpression()
         {
-            return string.Format("contains(@id, '{0}')", _value);
+            return string.Format("[contains(@id, '{0}')]", _value);
         }
     }
 
@@ -42,7 +41,7 @@ namespace Caelum.SeleniumDSL.Default.Selector
 
         public string GetExpression()
         {
-            return string.Format("@id='{0}'", _id);
+            return string.Format("[@id='{0}']", _id);
         }
     }
 }

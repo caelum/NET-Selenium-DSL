@@ -26,7 +26,7 @@ namespace Caelum.SeleniumDSL.Default.Selector
 
         public string GetExpression()
         {
-            return string.Format("@name='{0}'", _name);
+            return string.Format("[@name='{0}']", _name);
         }
     }
 
@@ -41,7 +41,7 @@ namespace Caelum.SeleniumDSL.Default.Selector
 
         public string GetExpression()
         {
-            return string.Format("contains(@name, '{0}')", _value);
+            return string.Format("[contains(@name, '{0}')]", _value);
         }
     }
 }

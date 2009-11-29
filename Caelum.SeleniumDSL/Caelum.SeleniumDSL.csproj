@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Selector\ISelector.cs" />
     <Compile Include="Table\Search\IRowMatcher.cs" />
     <Compile Include="Table\Search\IRowVisitor.cs" />
     <Compile Include="Table\ICell.cs" />

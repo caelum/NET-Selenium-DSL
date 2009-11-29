@@ -51,6 +51,8 @@
     <Compile Include="FormTest.cs" />
     <Compile Include="PageTest.cs" />
     <Compile Include="SelectFieldTest.cs" />
+    <Compile Include="Selector\IdTest.cs" />
+    <Compile Include="Selector\NameTest.cs" />
     <Compile Include="Table\Layout\TableLayoutChooserTest.cs" />
     <Compile Include="UnitTest.cs" />
     <Compile Include="ContentTagTest.cs" />

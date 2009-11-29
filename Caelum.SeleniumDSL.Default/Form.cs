@@ -1,4 +1,5 @@
-﻿using Selenium;
+﻿using Caelum.SeleniumDSL.Selector;
+using Selenium;
 
 namespace Caelum.SeleniumDSL.Default
 {
@@ -6,13 +7,13 @@ namespace Caelum.SeleniumDSL.Default
     {
         private readonly ISelenium _selenium;
         private readonly long _timeout;
-        private readonly string _id;
+        private readonly ISelector _selector;
 
-        public Form(ISelenium selenium, long timeout, string id)
+        public Form(ISelenium selenium, long timeout, ISelector selector)
         {
             _selenium = selenium;
             _timeout = timeout;
-            _id = id;
+            _selector = selector;
         }
 
         public IField Field(string field)
@@ -55,7 +56,7 @@ namespace Caelum.SeleniumDSL.Default
 
         public void Submit()
         {
-            _selenium.Submit(_id);
+            _selenium.Submit(string.Format("//form{0}", _selector.GetExpression()));
             _selenium.WaitForPageToLoad(_timeout.ToString());
         }
     }

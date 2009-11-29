@@ -1,10 +1,11 @@
-﻿using Caelum.SeleniumDSL.Table;
+﻿using Caelum.SeleniumDSL.Selector;
+using Caelum.SeleniumDSL.Table;
 
 namespace Caelum.SeleniumDSL
 {
     public interface IPage
     {
-        IForm Form(string id);
+        IForm Form(ISelector selector);
 
         IContentTag Div(string id);
 

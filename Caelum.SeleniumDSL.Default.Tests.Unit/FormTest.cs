@@ -1,17 +1,26 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Caelum.SeleniumDSL.Default.Selector;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Caelum.SeleniumDSL.Default.Tests.Unit
 {
     [TestClass]
     public class FormTest : UnitTest
     {
+        private IForm _form;
+
+        [TestInitialize]
+        public new void Setup()
+        {
+            base.Setup();
+            _form = new Form(Selenium.Object, 10000, Id.Is("form"));
+        }
+
         [TestMethod]
         public void TestCheck()
         {
             Selenium.Setup(o => o.Check("oneCheckbox"));
 
-            var form = new Form(Selenium.Object, 10000, "form");
-            form.Check("oneCheckbox");
+            _form.Check("oneCheckbox");
         }
 
         [TestMethod]
@@ -19,8 +28,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         {
             Selenium.Setup(o => o.Click("someElement"));
 
-            var form = new Form(Selenium.Object, 10000, "form");
-            form.Click("someElement");
+            _form.Click("someElement");
         }
 
         [TestMethod]
@@ -29,9 +37,8 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
             Selenium.Setup(o => o.IsChecked("someElement"))
                 .Returns(true);
 
-            var form = new Form(Selenium.Object, 10000, "form");
 
-            Assert.IsTrue(form.IsChecked("someElement"));
+            Assert.IsTrue(_form.IsChecked("someElement"));
         }
 
         [TestMethod]
@@ -40,18 +47,16 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
             Selenium.Setup(o => o.Click("someElement"));
             Selenium.Setup(o => o.WaitForPageToLoad("10000"));
 
-            var form = new Form(Selenium.Object, 10000, "form");
-            form.Navigate("someElement");
+            _form.Navigate("someElement");
         }
 
         [TestMethod]
         public void TestSubmit()
         {
-            Selenium.Setup(o => o.Submit("form"));
+            Selenium.Setup(o => o.Submit("//form[@id='form']"));
             Selenium.Setup(o => o.WaitForPageToLoad("10000"));
 
-            var form = new Form(Selenium.Object, 10000, "form");
-            form.Submit();
+            _form.Submit();
         }
 
         [TestMethod]
@@ -59,8 +64,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         {
             Selenium.Setup(o => o.Uncheck("someElement"));
 
-            var form = new Form(Selenium.Object, 10000, "form");
-            form.Uncheck("someElement");
+            _form.Uncheck("someElement");
         }
     }
 }

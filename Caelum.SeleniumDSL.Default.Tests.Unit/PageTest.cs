@@ -10,7 +10,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestInitialize]
         public new void SetUp()
         {
-            base.SetUp();
+            base.Setup();
             _page = new Page(Selenium.Object, 10000);
         }
 

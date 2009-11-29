@@ -1,4 +1,5 @@
 ﻿using Caelum.SeleniumDSL.Default.Table.Layout;
+using Caelum.SeleniumDSL.Selector;
 using Caelum.SeleniumDSL.Table;
 using Selenium;
 
@@ -16,9 +17,9 @@ namespace Caelum.SeleniumDSL.Default
             _timeout = timeout;
         }
 
-        public IForm Form(string id)
+        public IForm Form(ISelector selector)
         {
-            return new Form(_selenium, _timeout, id);
+            return new Form(_selenium, _timeout, selector);
         }
 
         public IContentTag Div(string id)

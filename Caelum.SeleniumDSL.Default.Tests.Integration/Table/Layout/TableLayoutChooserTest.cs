@@ -10,9 +10,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
         public void ShouldChoosePlainTableLayoutWhenDoesNotHaveTheadAndThs()
         {
             OpenPlainTable();
-            var chooser = new TableLayoutChooser(Selenium, "oneTable");
-            ITableLayout layout = chooser.GetLayout();
-
+            var layout = new TableLayoutChooser(Browser.GetDelegate(), "oneTable").GetLayout();
             Assert.IsInstanceOfType(layout, typeof(PlainTableLayout));
         }
 
@@ -20,9 +18,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
         public void ShouldChoosePlainTablePlusThLayoutWhenHasThsButDoesNotHaveThead()
         {
             OpenPlainTablePlusTh();
-            var chooser = new TableLayoutChooser(Selenium, "oneTable");
-            ITableLayout layout = chooser.GetLayout();
-
+            var layout = new TableLayoutChooser(Browser.GetDelegate(), "oneTable").GetLayout();
             Assert.IsInstanceOfType(layout, typeof(PlainTablePlusThLayout));
         }
 
@@ -30,9 +26,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
         public void ShouldChooseFullTableLayoutWhenHasTheadAndThs()
         {
             OpenFullTable();
-            var chooser = new TableLayoutChooser(Selenium, "oneTable");
-            ITableLayout layout = chooser.GetLayout();
-
+            var layout = new TableLayoutChooser(Browser.GetDelegate(), "oneTable").GetLayout();
             Assert.IsInstanceOfType(layout, typeof(FullTableLayout));
         }
     }

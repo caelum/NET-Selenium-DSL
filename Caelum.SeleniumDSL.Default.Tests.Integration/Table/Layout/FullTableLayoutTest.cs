@@ -9,11 +9,11 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
         private FullTableLayout _tableLayout;
 
         [TestInitialize]
-        public override void SetUp()
+        public override void Setup()
         {
-            base.SetUp();
+            base.Setup();
             OpenFullTable();
-            _tableLayout = new FullTableLayout(Selenium, "oneTable");
+            _tableLayout = new FullTableLayout(Browser.GetDelegate(), "oneTable");
         }
 
         [TestMethod]

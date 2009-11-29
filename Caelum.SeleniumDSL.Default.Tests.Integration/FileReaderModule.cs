@@ -13,7 +13,11 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
 
         public FileReaderModule()
         {
-            _ignoredPaths = new List<string> {"/favicon.ico", "/"};
+            _ignoredPaths = new List<string>
+                                {
+                                    "/favicon.ico",
+                                    "/"
+                                };
         }
 
         public override bool Process(IHttpRequest request, IHttpResponse response, IHttpSession session)
@@ -22,6 +26,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
                 return true;
 
             TextWriter writer = new StreamWriter(response.Body);
+            
             try
             {
                 string fileContents = File.ReadAllText("resources" + request.Uri.AbsolutePath);

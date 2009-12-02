@@ -1,11 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <TestRunConfiguration name="IntegrationTests" id="42a076db-298e-4055-beb2-877cabce6610" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
   <Description>This is a default test run configuration for a local test run.</Description>
-  <CodeCoverage enabled="true">
-    <Regular>
-      <CodeCoverageItem binaryFile="Caelum.SeleniumDSL.Default\bin\Debug\Caelum.SeleniumDSL.Default.dll" pdbFile="Caelum.SeleniumDSL.Default\bin\Debug\Caelum.SeleniumDSL.Default.pdb" instrumentInPlace="true" />
-    </Regular>
-  </CodeCoverage>
   <Deployment>
     <DeploymentItem filename="Caelum.SeleniumDSL.Default.Tests.Integration\resources\" outputDirectory="resources" />
   </Deployment>

@@ -1,4 +1,5 @@
 ﻿using Caelum.SeleniumDSL.Default.Table.Layout;
+using Caelum.SeleniumDSL.Default.Tests.Integration.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
@@ -8,10 +9,22 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
     {
         private PlainTablePlusThLayout _tableLayout;
 
-        [TestInitialize]
-        public override void Setup()
+        [ClassInitialize]
+        public static void Initialize(TestContext ignore)
         {
-            base.Setup();
+            ServersHelper.StartServers();
+            Browser = new SeleniumBrowser(ServersHelper.GetSelenium());
+        }
+
+        [ClassCleanup]
+        public static void Cleanup()
+        {
+            ServersHelper.StopServers();
+        }
+
+        [TestInitialize]
+        public void Setup()
+        {
             OpenPlainTablePlusTh();
             _tableLayout = new PlainTablePlusThLayout(Browser.GetDelegate(), "oneTable");
         }
@@ -51,7 +64,5 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration.Table.Layout
         {
             Assert.AreEqual("Row 1 - Cell 2", _tableLayout.Value(1, 2));
         }
-
     }
-
 }

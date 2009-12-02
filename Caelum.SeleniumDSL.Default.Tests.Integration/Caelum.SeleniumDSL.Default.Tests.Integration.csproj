@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="FileReaderModule.cs" />
     <Compile Include="FormTest.cs" />
+    <Compile Include="Helpers\ServersHelper.cs" />
     <Compile Include="Table\Layout\PlainTablePlusThLayoutTest.cs" />
     <Compile Include="Table\Layout\PlainTableLayoutTest.cs" />
     <Compile Include="Table\Layout\FullTableLayoutTest.cs" />

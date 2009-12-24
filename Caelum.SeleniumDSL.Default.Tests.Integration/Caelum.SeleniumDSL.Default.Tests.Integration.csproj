@@ -17,7 +17,7 @@
     <ManifestCertificateThumbprint>7E7654C5F6C734439194306DB9133AEB0E7379F3</ManifestCertificateThumbprint>
     <ManifestKeyFile>Integration Tests_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>

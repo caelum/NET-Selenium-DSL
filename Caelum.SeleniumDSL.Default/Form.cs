@@ -7,18 +7,18 @@ namespace Caelum.SeleniumDSL.Default
     {
         private readonly ISelenium _selenium;
         private readonly long _timeout;
-        private readonly string _xPath;
+        private readonly string _xpath;
 
-        public virtual string XPath
+        public virtual string Xpath
         {
-            get { return _xPath; }
+            get { return _xpath; }
         }
 
         public Form(ISelenium selenium, long timeout, ISelector selector)
         {
             _selenium = selenium;
             _timeout = timeout;
-            _xPath = string.Format("//form{0}", selector.GetExpression());
+            _xpath = string.Format("//form{0}", selector.GetExpression());
         }
 
         public IField Field(string name)
@@ -61,7 +61,7 @@ namespace Caelum.SeleniumDSL.Default
 
         public IPage Submit()
         {
-            _selenium.Submit(_xPath);
+            _selenium.Submit(_xpath);
             _selenium.WaitForPageToLoad(_timeout.ToString());
             return new Page(_selenium, _timeout);
         }

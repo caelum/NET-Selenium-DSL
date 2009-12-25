@@ -8,7 +8,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         private IPage _page;
 
         [TestInitialize]
-        public new void SetUp()
+        public override void Setup()
         {
             base.Setup();
             _page = new Page(Selenium.Object, 10000);

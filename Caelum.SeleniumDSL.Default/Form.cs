@@ -7,18 +7,23 @@ namespace Caelum.SeleniumDSL.Default
     {
         private readonly ISelenium _selenium;
         private readonly long _timeout;
-        private readonly ISelector _selector;
+        private readonly string _xPath;
+
+        public virtual string XPath
+        {
+            get { return _xPath; }
+        }
 
         public Form(ISelenium selenium, long timeout, ISelector selector)
         {
             _selenium = selenium;
             _timeout = timeout;
-            _selector = selector;
+            _xPath = string.Format("//form{0}", selector.GetExpression());
         }
 
-        public IField Field(string field)
+        public IField Field(string name)
         {
-            return new Field(_selenium, this, field);
+            return new Field(_selenium, this, name);
         }
 
         public void Click(string element)
@@ -54,10 +59,11 @@ namespace Caelum.SeleniumDSL.Default
             return _selenium.IsChecked(checkbox);
         }
 
-        public void Submit()
+        public IPage Submit()
         {
-            _selenium.Submit(string.Format("//form{0}", _selector.GetExpression()));
+            _selenium.Submit(_xPath);
             _selenium.WaitForPageToLoad(_timeout.ToString());
+            return new Page(_selenium, _timeout);
         }
     }
 }

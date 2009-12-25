@@ -8,22 +8,22 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
     {
         protected static IBrowser<ISelenium> Browser;
 
-        public void OpenFullTable()
+        protected void OpenFullTable()
         {
             Browser.Open("/table/fulltable.html");
         }
 
-        public void OpenPlainTable()
+        protected void OpenPlainTable()
         {
             Browser.Open("/table/plaintable.html");
         }
 
-        public void OpenPlainTablePlusTh()
+        protected void OpenPlainTablePlusTh()
         {
             Browser.Open("/table/plaintableplusth.html");
         }
 
-        public void OpenForm()
+        protected void OpenForm()
         {
             Browser.Open("/form/form.html");
         }

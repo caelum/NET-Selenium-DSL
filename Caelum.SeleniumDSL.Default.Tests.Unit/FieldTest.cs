@@ -1,33 +1,51 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace Caelum.SeleniumDSL.Default.Tests.Unit
 {
     [TestClass]
     public class FieldTest : UnitTest
     {
+        private IForm _form;
+
+        [TestInitialize]
+        public override void Setup()
+        {
+            base.Setup();
+
+            var formMock = Mockery.Create<IForm>();
+            formMock.Setup(
+                f => f.XPath).Returns("//form[@id='f']");
+
+            _form = formMock.Object;
+        }
+
         [TestMethod]
         public void TestBlur()
         {
-            Selenium.Setup(o => o.FireEvent("", "blur"));
+            Selenium.Setup(
+                o => o.FireEvent(_form.XPath + "/input[@name='input']", "blur"));
 
-            new Field(Selenium.Object, null, "").Blur();
+            new Field(Selenium.Object, _form, "input").Blur();
         }
 
         [TestMethod]
         public void TestChange()
         {
-            Selenium.Setup(o => o.FireEvent("", "change"));
+            Selenium.Setup(
+                o => o.FireEvent(_form.XPath + "/input[@name='input']", "change"));
 
-            new Field(Selenium.Object, null, "").Change();
+            new Field(Selenium.Object, _form, "input").Change();
         }
 
         [TestMethod]
         public void TestContains()
         {
-            Selenium.Setup(o => o.GetValue("someId"))
+            Selenium.Setup(
+                o => o.GetValue(_form.XPath + "/input[@name='input']"))
                 .Returns("Some text");
 
-            var field = new Field(Selenium.Object, null, "someId");
+            var field = new Field(Selenium.Object, _form, "input");
 
             Assert.IsTrue(field.Contains("text"));
         }
@@ -35,10 +53,10 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestContent()
         {
-            Selenium.Setup(o => o.GetValue("someId"))
+            Selenium.Setup(o => o.GetValue(_form.XPath + "/input[@name='input']"))
                 .Returns("Some text");
 
-            var field = new Field(Selenium.Object, null, "someId");
+            var field = new Field(Selenium.Object, _form, "input");
 
             Assert.AreEqual("Some text", field.Content());
         }
@@ -46,10 +64,10 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestType()
         {
-            Selenium.Setup(o => o.Type("someId", "Some text"));
+            Selenium.Setup(
+                o => o.Type(_form.XPath + "/input[@name='input']", "Some text"));
 
-            var field = new Field(Selenium.Object, null, "someId");
-
+            var field = new Field(Selenium.Object, _form, "input");
             field.Type("Some text");
         }
     }

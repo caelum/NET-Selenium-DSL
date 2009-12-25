@@ -25,10 +25,10 @@ namespace Caelum.SeleniumDSL.Default.Tests.Integration
         {
             OpenForm();
 
-            IPage page = Browser.CurrentPage();
-            page.Form(Id.Is("testform")).Submit();
+            var currentPage = Browser.CurrentPage();
+            var pageAfterSubmission = currentPage.Form(Id.Is("testform")).Submit();
 
-            Assert.IsTrue(page.Div(Id.Is("ok")).Exists());
+            Assert.IsTrue(pageAfterSubmission.Div(Id.Is("ok")).Exists());
         }
     }
 }

@@ -2,6 +2,8 @@
 {
     public interface IForm
     {
+        string XPath { get; }
+
         IField Field(string field);
 
         void Click(string element);
@@ -16,6 +18,6 @@
 
         bool IsChecked(string checkbox);
 
-        void Submit();
+        IPage Submit();
     }
 }

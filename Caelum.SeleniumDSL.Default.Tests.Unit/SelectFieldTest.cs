@@ -23,7 +23,8 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestBlur()
         {
-            Selenium.Setup(o => o.FireEvent(FormXpath + "/select[@id='select']", "blur"));
+            Selenium.Setup(
+                o => o.FireEvent(FormXpath + "/select[@id='select']", "blur"));
 
             var select = new SelectField(Selenium.Object, _form, "select");
 
@@ -33,7 +34,8 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestChooseWithExpectedValue()
         {
-            Selenium.Setup(o => o.Select(FormXpath + "/select[@id='select']", "Element"));
+            Selenium.Setup(
+                o => o.Select(FormXpath + "/select[@id='select']", "Element"));
 
             var select = new SelectField(Selenium.Object, _form, "select");
 
@@ -58,7 +60,8 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void Content()
         {
-            Selenium.Setup(o => o.GetSelectedLabel(FormXpath + "/select[@id='select']"));
+            Selenium.Setup(
+                o => o.GetSelectedLabel(FormXpath + "/select[@id='select']"));
 
             var select = new SelectField(Selenium.Object, _form, "select");
 
@@ -68,7 +71,8 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void Value()
         {
-            Selenium.Setup(o => o.GetValue(FormXpath + "/select[@id='select']"));
+            Selenium.Setup(
+                o => o.GetValue(FormXpath + "/select[@id='select']"));
 
             var select = new SelectField(Selenium.Object, _form, "select");
 
@@ -78,7 +82,8 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void Values()
         {
-            Selenium.Setup(o => o.GetSelectOptions(FormXpath + "/select[@id='select']"));
+            Selenium.Setup(
+                o => o.GetSelectOptions(FormXpath + "/select[@id='select']"));
 
             var select = new SelectField(Selenium.Object, _form, "select");
 

@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="IElement.cs" />
     <Compile Include="Selector\ISelector.cs" />
     <Compile Include="Table\Search\IRowMatcher.cs" />
     <Compile Include="Table\Search\IRowVisitor.cs" />
@@ -50,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
     <Reference Include="ThoughtWorks.Selenium.Core, Version=0.0.0.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\ThoughtWorks.Selenium.Core.dll</HintPath>

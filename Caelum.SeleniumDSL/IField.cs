@@ -1,6 +1,6 @@
 ﻿namespace Caelum.SeleniumDSL
 {
-    public interface IField
+    public interface IField : IElement
     {
         IForm Type(string content);
 

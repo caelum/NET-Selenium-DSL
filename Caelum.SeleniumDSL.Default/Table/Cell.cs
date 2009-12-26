@@ -1,4 +1,5 @@
-﻿using Caelum.SeleniumDSL.Table;
+﻿using System;
+using Caelum.SeleniumDSL.Table;
 
 namespace Caelum.SeleniumDSL.Default.Table
 {
@@ -23,6 +24,11 @@ namespace Caelum.SeleniumDSL.Default.Table
         public bool Contains(string text)
         {
             return _table.Layout.Value(_row, _column).Contains(text);
+        }
+
+        public string Xpath
+        {
+            get { throw new NotImplementedException(); }
         }
     }
 }

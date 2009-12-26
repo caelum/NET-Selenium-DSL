@@ -1,6 +1,6 @@
 ﻿namespace Caelum.SeleniumDSL.Table
 {
-    public interface ICell
+    public interface ICell : IElement
     {
         string Value();
 

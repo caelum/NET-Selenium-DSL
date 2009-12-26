@@ -3,7 +3,7 @@ using Caelum.SeleniumDSL.Table;
 
 namespace Caelum.SeleniumDSL
 {
-    public interface IPage
+    public interface IPage : IElement
     {
         IForm Form(ISelector selector);
         

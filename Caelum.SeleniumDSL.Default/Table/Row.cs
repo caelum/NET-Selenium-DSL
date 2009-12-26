@@ -1,4 +1,5 @@
-﻿using Caelum.SeleniumDSL.Table;
+﻿using System;
+using Caelum.SeleniumDSL.Table;
 
 namespace Caelum.SeleniumDSL.Default.Table
 {
@@ -26,6 +27,11 @@ namespace Caelum.SeleniumDSL.Default.Table
         public int Index()
         {
             return _index;
+        }
+
+        public string Xpath
+        {
+            get { throw new NotImplementedException(); }
         }
     }
 }

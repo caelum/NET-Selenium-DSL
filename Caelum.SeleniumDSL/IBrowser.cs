@@ -2,6 +2,8 @@
 {
     public interface IBrowser<T>
     {
+        void Start();
+
         IPage Open(string url);
 
         IPage CurrentPage();

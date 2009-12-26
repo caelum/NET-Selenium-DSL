@@ -1,4 +1,5 @@
-﻿using Caelum.SeleniumDSL.Default.Selector;
+﻿using System;
+using Caelum.SeleniumDSL.Default.Selector;
 using Caelum.SeleniumDSL.Default.Table.Layout;
 using Caelum.SeleniumDSL.Selector;
 using Caelum.SeleniumDSL.Table;
@@ -121,6 +122,11 @@ namespace Caelum.SeleniumDSL.Default
         {
             _selenium.DragAndDrop(source, destination);
             return this;
+        }
+
+        public string Xpath
+        {
+            get { return "/"; }
         }
     }
 }

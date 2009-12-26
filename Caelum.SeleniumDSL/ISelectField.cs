@@ -1,6 +1,6 @@
 ﻿namespace Caelum.SeleniumDSL
 {
-    public interface ISelectField
+    public interface ISelectField : IElement
     {
         IForm Choose(string value);
 

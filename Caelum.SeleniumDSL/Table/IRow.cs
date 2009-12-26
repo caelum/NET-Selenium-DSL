@@ -1,6 +1,6 @@
 ﻿namespace Caelum.SeleniumDSL.Table
 {
-    public interface IRow
+    public interface IRow : IElement
     {
         ICell Cell(int column);
 

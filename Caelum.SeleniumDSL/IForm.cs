@@ -1,9 +1,7 @@
 ﻿namespace Caelum.SeleniumDSL
 {
-    public interface IForm
+    public interface IForm : IElement
     {
-        string XPath { get; }
-
         IField Field(string field);
 
         void Click(string element);

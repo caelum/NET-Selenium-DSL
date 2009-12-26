@@ -1,4 +1,5 @@
-﻿using Caelum.SeleniumDSL.Table;
+﻿using System;
+using Caelum.SeleniumDSL.Table;
 
 namespace Caelum.SeleniumDSL.Default.Table
 {
@@ -27,5 +28,9 @@ namespace Caelum.SeleniumDSL.Default.Table
             return -1;
         }
 
+        public string Xpath
+        {
+            get { throw new NotImplementedException(); }
+        }
     }
 }

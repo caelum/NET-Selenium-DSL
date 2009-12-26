@@ -1,6 +1,6 @@
 ﻿namespace Caelum.SeleniumDSL.Table
 {
-    public interface IColumn
+    public interface IColumn : IElement
     {
         bool Contains(string text);
 

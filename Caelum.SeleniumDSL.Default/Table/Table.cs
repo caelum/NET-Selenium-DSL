@@ -105,5 +105,10 @@ namespace Caelum.SeleniumDSL.Default.Table
             }
             return false;
         }
+
+        public string Xpath
+        {
+            get { throw new NotImplementedException(); }
+        }
     }
 }

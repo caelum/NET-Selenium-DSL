@@ -1,4 +1,5 @@
-﻿using Selenium;
+﻿using System;
+using Selenium;
 
 namespace Caelum.SeleniumDSL.Default
 {
@@ -17,6 +18,11 @@ namespace Caelum.SeleniumDSL.Default
         {
             _selenium = selenium;
             _timeout = timeout;
+        }
+
+        public void Start()
+        {
+            _selenium.Start();
         }
 
         public IPage Open(string url)

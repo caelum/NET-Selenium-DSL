@@ -1,8 +1,8 @@
 ﻿using Caelum.SeleniumDSL.Table.Search;
 
-namespace Caelum.SeleniumDSL.Table
+namespace Caelum.SeleniumDSL.Table 
 {
-    public interface ITable
+    public interface ITable : IElement
     {
         //should be GetTableType??
         //string GetType();

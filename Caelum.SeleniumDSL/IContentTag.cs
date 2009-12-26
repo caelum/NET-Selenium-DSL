@@ -1,6 +1,6 @@
 ﻿namespace Caelum.SeleniumDSL
 {
-    public interface IContentTag
+    public interface IContentTag : IElement
     {
         bool Contains(string content);
 

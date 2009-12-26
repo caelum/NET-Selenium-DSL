@@ -1,4 +1,5 @@
-﻿using Selenium;
+﻿using System;
+using Selenium;
 
 namespace Caelum.SeleniumDSL.Default
 {
@@ -12,7 +13,7 @@ namespace Caelum.SeleniumDSL.Default
         {
             _selenium = selenium;
             _form = form;
-            _xpath = string.Format("{0}/input[@name='{1}']", _form.XPath, name);
+            _xpath = string.Format("{0}/input[@name='{1}']", _form.Xpath, name);
         }
 
         public IForm Type(string content)
@@ -39,6 +40,11 @@ namespace Caelum.SeleniumDSL.Default
         public void Change()
         {
             _selenium.FireEvent(_xpath, "change");
+        }
+
+        public string Xpath
+        {
+            get { return _xpath; }
         }
     }
 }

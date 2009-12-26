@@ -7,6 +7,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
     public class FieldTest : UnitTest
     {
         private IForm _form;
+        private const string FormXpath = "//form[@id='f']";
 
         [TestInitialize]
         public override void Setup()
@@ -14,8 +15,9 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
             base.Setup();
 
             var formMock = Mockery.Create<IForm>();
+            
             formMock.Setup(
-                f => f.XPath).Returns("//form[@id='f']");
+                f => f.Xpath).Returns(FormXpath);
 
             _form = formMock.Object;
         }
@@ -24,7 +26,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         public void TestBlur()
         {
             Selenium.Setup(
-                o => o.FireEvent(_form.XPath + "/input[@name='input']", "blur"));
+                o => o.FireEvent(FormXpath + "/input[@name='input']", "blur"));
 
             new Field(Selenium.Object, _form, "input").Blur();
         }
@@ -33,7 +35,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         public void TestChange()
         {
             Selenium.Setup(
-                o => o.FireEvent(_form.XPath + "/input[@name='input']", "change"));
+                o => o.FireEvent(FormXpath + "/input[@name='input']", "change"));
 
             new Field(Selenium.Object, _form, "input").Change();
         }
@@ -42,7 +44,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         public void TestContains()
         {
             Selenium.Setup(
-                o => o.GetValue(_form.XPath + "/input[@name='input']"))
+                o => o.GetValue(FormXpath + "/input[@name='input']"))
                 .Returns("Some text");
 
             var field = new Field(Selenium.Object, _form, "input");
@@ -53,7 +55,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestContent()
         {
-            Selenium.Setup(o => o.GetValue(_form.XPath + "/input[@name='input']"))
+            Selenium.Setup(o => o.GetValue(FormXpath + "/input[@name='input']"))
                 .Returns("Some text");
 
             var field = new Field(Selenium.Object, _form, "input");
@@ -63,9 +65,9 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
 
         [TestMethod]
         public void TestType()
-        {
+       { 
             Selenium.Setup(
-                o => o.Type(_form.XPath + "/input[@name='input']", "Some text"));
+                o => o.Type(FormXpath + "/input[@name='input']", "Some text"));
 
             var field = new Field(Selenium.Object, _form, "input");
             field.Type("Some text");

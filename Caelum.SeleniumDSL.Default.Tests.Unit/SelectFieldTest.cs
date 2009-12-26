@@ -1,16 +1,31 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace Caelum.SeleniumDSL.Default.Tests.Unit
 {
     [TestClass]
     public class SelectFieldTest : UnitTest
     {
+        private IForm _form;
+        private const string FormXpath = "//form[@id='f']";
+
+        [TestInitialize]
+        public override void Setup()
+        {
+            base.Setup();
+
+            Mock<IForm> form = Mockery.Create<IForm>();
+            form.Setup(
+                f => f.Xpath).Returns(FormXpath);
+            _form = form.Object;
+        }
+
         [TestMethod]
         public void TestBlur()
         {
-            Selenium.Setup(o => o.FireEvent("selectId", "blur"));
+            Selenium.Setup(o => o.FireEvent(FormXpath + "/select[@id='select']", "blur"));
 
-            var select = new SelectField(Selenium.Object, null, "selectId");
+            var select = new SelectField(Selenium.Object, _form, "select");
 
             select.Blur();
         }
@@ -18,9 +33,9 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestChooseWithExpectedValue()
         {
-            Selenium.Setup(o => o.Select("selectId", "Element"));
+            Selenium.Setup(o => o.Select(FormXpath + "/select[@id='select']", "Element"));
 
-            var select = new SelectField(Selenium.Object, null, "selectId");
+            var select = new SelectField(Selenium.Object, _form, "select");
 
             select.Choose("Element");
         }
@@ -28,11 +43,14 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestChooseWithExpectedIndexValue()
         {
-            Selenium.Setup(o => o.Select("selectId", "Element"));
-            Selenium.Setup(o => o.GetSelectOptions("selectId"))
+            Selenium.Setup(
+                o => o.Select(FormXpath + "/select[@id='select']", "Element"));
+            
+            Selenium.Setup(
+                o => o.GetSelectOptions(FormXpath + "/select[@id='select']"))
                 .Returns(new[] {"", "", "Element"});
 
-            var select = new SelectField(Selenium.Object, null, "selectId");
+            var select = new SelectField(Selenium.Object, _form, "select");
 
             select.Choose(2);
         }
@@ -40,9 +58,9 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void Content()
         {
-            Selenium.Setup(o => o.GetSelectedLabel("selectId"));
+            Selenium.Setup(o => o.GetSelectedLabel(FormXpath + "/select[@id='select']"));
 
-            var select = new SelectField(Selenium.Object, null, "selectId");
+            var select = new SelectField(Selenium.Object, _form, "select");
 
             select.Content();
         }
@@ -50,9 +68,9 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void Value()
         {
-            Selenium.Setup(o => o.GetValue("selectId"));
+            Selenium.Setup(o => o.GetValue(FormXpath + "/select[@id='select']"));
 
-            var select = new SelectField(Selenium.Object, null, "selectId");
+            var select = new SelectField(Selenium.Object, _form, "select");
 
             select.Value();
         }
@@ -60,9 +78,9 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void Values()
         {
-            Selenium.Setup(o => o.GetSelectOptions("selectId"));
+            Selenium.Setup(o => o.GetSelectOptions(FormXpath + "/select[@id='select']"));
 
-            var select = new SelectField(Selenium.Object, null, "selectId");
+            var select = new SelectField(Selenium.Object, _form, "select");
 
             select.Values();
         }

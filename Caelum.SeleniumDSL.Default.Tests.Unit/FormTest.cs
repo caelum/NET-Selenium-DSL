@@ -26,7 +26,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestClick()
         {
-            Selenium.Setup(o => o.Click("someElement"));
+            Selenium.Setup(o => o.Click("//form[@id='f']/*[@name='someElement']"));
 
             _form.Click("someElement");
         }
@@ -34,7 +34,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestIsChecked()
         {
-            Selenium.Setup(o => o.IsChecked("someElement"))
+            Selenium.Setup(o => o.IsChecked("//form[@id='f']/input[@name='someElement']"))
                 .Returns(true);
 
 
@@ -44,7 +44,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestNavigate()
         {
-            Selenium.Setup(o => o.Click("someElement"));
+            Selenium.Setup(o => o.Click("//form[@id='f']/*[@name='someElement']"));
             Selenium.Setup(o => o.WaitForPageToLoad("10000"));
 
             _form.Navigate("someElement");
@@ -53,7 +53,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestSubmit()
         {
-            Selenium.Setup(o => o.Submit("//form[@id='form']"));
+            Selenium.Setup(o => o.Submit("//form[@id='f']"));
             Selenium.Setup(o => o.WaitForPageToLoad("10000"));
 
             _form.Submit();
@@ -62,7 +62,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         [TestMethod]
         public void TestUncheck()
         {
-            Selenium.Setup(o => o.Uncheck("someElement"));
+            Selenium.Setup(o => o.Uncheck("//form[@id='f']/input[@name='someElement']"));
 
             _form.Uncheck("someElement");
         }

@@ -51,13 +51,13 @@ namespace Caelum.SeleniumDSL.Default
 
         public IForm Uncheck(string checkbox)
         {
-            _selenium.Uncheck(string.Format("{0}/*[@name='{1}']", _xpath, checkbox));
+            _selenium.Uncheck(string.Format("{0}/input[@name='{1}']", _xpath, checkbox));
             return this;
         }
 
         public bool IsChecked(string checkbox)
         {
-            return _selenium.IsChecked(string.Format("{0}/*[@name='{1}']", _xpath, checkbox));
+            return _selenium.IsChecked(string.Format("{0}/input[@name='{1}']", _xpath, checkbox));
         }
 
         public IPage Submit()

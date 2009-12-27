@@ -2,7 +2,7 @@
 {
     public interface IForm : IElement
     {
-        IField Field(string field);
+        IField Field(string name);
 
         void Click(string element);
 

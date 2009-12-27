@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Caelum.SeleniumDSL.Selector;
 using Selenium;
 
 namespace Caelum.SeleniumDSL.Default
@@ -9,11 +9,11 @@ namespace Caelum.SeleniumDSL.Default
         private readonly IForm _form;
         private readonly string _xpath;
 
-        public SelectField(ISelenium selenium, IForm form, string id)
+        public SelectField(ISelenium selenium, IForm form, ISelector selector)
         {
             _selenium = selenium;
             _form = form;
-            _xpath = string.Format("{0}/select[@id='{1}']", form.Xpath, id);
+            _xpath = string.Format("{0}/select{1}", form.Xpath, selector.GetExpression());
         }
 
         public IForm Choose(string value)

@@ -1,5 +1,4 @@
-﻿using System;
-using Caelum.SeleniumDSL.Default.Selector;
+﻿using Caelum.SeleniumDSL.Default.Selector;
 using Caelum.SeleniumDSL.Default.Table.Layout;
 using Caelum.SeleniumDSL.Selector;
 using Caelum.SeleniumDSL.Table;
@@ -36,7 +35,7 @@ namespace Caelum.SeleniumDSL.Default
 
         public ITable Table(string id)
         {
-            ITableLayout layout = new TableLayoutChooser(_selenium, id).GetLayout();
+            var layout = new TableLayoutChooser(_selenium, id).GetLayout();
             return new Table.Table(_selenium, layout, id);
         }
 

@@ -1,4 +1,5 @@
-﻿using Caelum.SeleniumDSL.Selector;
+﻿using Caelum.SeleniumDSL.Default.Selector;
+using Caelum.SeleniumDSL.Selector;
 using Selenium;
 
 namespace Caelum.SeleniumDSL.Default
@@ -26,37 +27,37 @@ namespace Caelum.SeleniumDSL.Default
             return new Field(_selenium, this, name);
         }
 
-        public void Click(string element)
+        public void Click(string name)
         {
-            _selenium.Click(element);
+            _selenium.Click(string.Format("{0}/*[@name='{1}']", _xpath, name));
         }
 
         public void Navigate(string element)
         {
-            _selenium.Click(element);
+            _selenium.Click(string.Format("{0}/*[@name='{1}']", _xpath, element));
             _selenium.WaitForPageToLoad(_timeout.ToString());
         }
 
-        public ISelectField Select(string selectField)
+        public ISelectField Select(string name)
         {
-            return new SelectField(_selenium, this, selectField);
+            return new SelectField(_selenium, this, Name.Is(name));
         }
 
-        public IForm Check(string checkbox)
+        public IForm Check(string name)
         {
-            _selenium.Check(checkbox);
+            _selenium.Check(string.Format("{0}/input[@name='{1}']", _xpath, name));
             return this;
         }
 
         public IForm Uncheck(string checkbox)
         {
-            _selenium.Uncheck(checkbox);
+            _selenium.Uncheck(string.Format("{0}/*[@name='{1}']", _xpath, checkbox));
             return this;
         }
 
         public bool IsChecked(string checkbox)
         {
-            return _selenium.IsChecked(checkbox);
+            return _selenium.IsChecked(string.Format("{0}/*[@name='{1}']", _xpath, checkbox));
         }
 
         public IPage Submit()

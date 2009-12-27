@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Caelum.SeleniumDSL.Default.Selector;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
 namespace Caelum.SeleniumDSL.Default.Tests.Unit
@@ -26,7 +27,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
             Selenium.Setup(
                 o => o.FireEvent(FormXpath + "/select[@id='select']", "blur"));
 
-            var select = new SelectField(Selenium.Object, _form, "select");
+            var select = new SelectField(Selenium.Object, _form, Id.Is("select"));
 
             select.Blur();
         }
@@ -37,7 +38,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
             Selenium.Setup(
                 o => o.Select(FormXpath + "/select[@id='select']", "Element"));
 
-            var select = new SelectField(Selenium.Object, _form, "select");
+            var select = new SelectField(Selenium.Object, _form, Id.Is("select"));
 
             select.Choose("Element");
         }
@@ -52,7 +53,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
                 o => o.GetSelectOptions(FormXpath + "/select[@id='select']"))
                 .Returns(new[] {"", "", "Element"});
 
-            var select = new SelectField(Selenium.Object, _form, "select");
+            var select = new SelectField(Selenium.Object, _form, Id.Is("select"));
 
             select.Choose(2);
         }
@@ -63,7 +64,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
             Selenium.Setup(
                 o => o.GetSelectedLabel(FormXpath + "/select[@id='select']"));
 
-            var select = new SelectField(Selenium.Object, _form, "select");
+            var select = new SelectField(Selenium.Object, _form, Id.Is("select"));
 
             select.Content();
         }
@@ -74,7 +75,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
             Selenium.Setup(
                 o => o.GetValue(FormXpath + "/select[@id='select']"));
 
-            var select = new SelectField(Selenium.Object, _form, "select");
+            var select = new SelectField(Selenium.Object, _form, Id.Is("select"));
 
             select.Value();
         }
@@ -85,7 +86,7 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
             Selenium.Setup(
                 o => o.GetSelectOptions(FormXpath + "/select[@id='select']"));
 
-            var select = new SelectField(Selenium.Object, _form, "select");
+            var select = new SelectField(Selenium.Object, _form, Id.Is("select"));
 
             select.Values();
         }

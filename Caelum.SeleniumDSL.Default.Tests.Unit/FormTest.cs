@@ -9,16 +9,16 @@ namespace Caelum.SeleniumDSL.Default.Tests.Unit
         private IForm _form;
 
         [TestInitialize]
-        public new void Setup()
+        public override void Setup()
         {
             base.Setup();
-            _form = new Form(Selenium.Object, 10000, Id.Is("form"));
+            _form = new Form(Selenium.Object, 10000, Id.Is("f"));
         }
 
         [TestMethod]
         public void TestCheck()
         {
-            Selenium.Setup(o => o.Check("oneCheckbox"));
+            Selenium.Setup(o => o.Check("//form[@id='f']/input[@name='oneCheckbox']"));
 
             _form.Check("oneCheckbox");
         }

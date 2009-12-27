@@ -1,5 +1,4 @@
-﻿using System;
-using Selenium;
+﻿using Selenium;
 
 namespace Caelum.SeleniumDSL.Default
 {

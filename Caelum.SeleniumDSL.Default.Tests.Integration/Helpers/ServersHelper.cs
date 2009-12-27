@@ -4,7 +4,7 @@ using Selenium;
 
 namespace Caelum.SeleniumDSL.Default.Tests.Integration.Helpers
 {
-    public class ServersHelper
+    public static class ServersHelper
     {
         private static bool _running = false;
 

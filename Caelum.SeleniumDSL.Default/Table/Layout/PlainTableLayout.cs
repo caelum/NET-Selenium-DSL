@@ -22,7 +22,7 @@ namespace Caelum.SeleniumDSL.Default.Table.Layout
 
         public string HeaderLinkValue(int column)
         {
-            return _selenium.GetText(_headerXPath + string.Format("/td[{0}]/a/text()", column));
+            return _selenium.GetText(_headerXPath + string.Format("/td[{0}]/a", column));
         }
 
         public int GetContentCount()
